@@ -15,13 +15,18 @@
 
     <PackageId>ReZephyr.Maui</PackageId>
     <Title>ReZephyr Design System for .NET MAUI</Title>
-    <Description>Fully tokenized ReZephyr design system for any .NET MAUI app. Resource keys use the ReZephyr prefix.</Description>
-    <PackageTags>rezephyr;maui;design-system;tokens;fluent;hig</PackageTags>
+    <Description>Fully tokenized ReZephyr design system by Hamed / HimoZ for any .NET MAUI app. Resource keys use the ReZephyr prefix. Use requires attribution — see LICENSE.</Description>
+    <PackageTags>rezephyr;maui;design-system;tokens;fluent;hig;himoz</PackageTags>
     <Version>1.0.0-beta.3</Version>
-    <Authors>HimoZ</Authors>
+    <Authors>Hamed;HimoZ</Authors>
+    <Company>HimoZ</Company>
+    <Copyright>Copyright (c) Hamed / HimoZ / ReZephyr</Copyright>
     <PackageProjectUrl>https://github.com/himoN7/rezephyr</PackageProjectUrl>
     <RepositoryUrl>https://github.com/himoN7/rezephyr</RepositoryUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
@@ -33,6 +38,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE" Pack="true" PackagePath="\" />
+    <None Include="..\NOTICE" Pack="true" PackagePath="\" />
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>

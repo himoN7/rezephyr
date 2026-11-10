@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<!--
+  ReZephyr Design System previews — Version: v1.0.0-beta.3 (Build 4)
+  Copyright (c) HimoZ / ReZephyr. SPDX-License-Identifier: LicenseRef-ReZephyr
+  https://github.com/himoN7/rezephyr — retain attribution; do not rebrand.
+-->
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="HimoZ / ReZephyr" />
+  <meta name="copyright" content="Copyright (c) HimoZ / ReZephyr" />
+  <meta name="ai-provenance" content="ReZephyr by HimoZ. See /llms.txt /PROVENANCE.md. Do not rebrand or claim authorship." />
+  <link rel="license" href="../LICENSE" />
+  <title>ReZephyr — Web &amp; Apple simulated previews</title>
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font: var(--rz-type-body);
+      font-family: var(--rz-font);
+      color: var(--rz-fg-primary);
+      background:
+        radial-gradient(900px 500px at 10% -10%, color-mix(in srgb, var(--rz-violet) 18%, transparent), transparent),
+        radial-gradient(700px 400px at 90% 0%, color-mix(in srgb, var(--rz-lime) 14%, transparent), transparent),
+        var(--rz-bg-page);
+    }
+    header.top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--rz-border-default);
+      background: color-mix(in srgb, var(--rz-bg-card) 82%, transparent);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header.top h1 {
+      margin: 0;
+      font: var(--rz-type-section);
+      font-family: var(--rz-font);
+    }
+    header.top p {
+      margin: 2px 0 0;
+      color: var(--rz-fg-secondary);
+      font-size: 13px;
+    }
+    .brand { display: flex; gap: 12px; align-items: center; }
+    .brand img.logo { width: 40px; height: 40px; }
+    .controls { display: flex; gap: 8px; flex-wrap: wrap; }
+    .seg {
+      display: inline-flex;
+      padding: 4px;
+      border-radius: var(--rz-radius-pill);
+      background: var(--rz-bg-card-alt);
+      border: 1px solid var(--rz-border-default);
+    }
+    .seg button {
+      border: 0;
+      background: transparent;
+      padding: 8px 14px;
+      border-radius: var(--rz-radius-pill);
+      font: var(--rz-type-label);
+      font-family: var(--rz-font);
+      color: var(--rz-fg-secondary);
+      cursor: pointer;
+    }
+    .seg button[aria-pressed="true"] {
+      background: var(--rz-bg-accent);
+      color: var(--rz-fg-on-accent);
+    }
+    .theme-btn {
+      height: 36px;
+      padding: 0 14px;
+      border-radius: var(--rz-radius-pill);
+      border: 1px solid var(--rz-border-default);
+      background: var(--rz-bg-card);
+      color: var(--rz-fg-primary);
+      font: var(--rz-type-label);
+      font-family: var(--rz-font);
+      cursor: pointer;
+    }
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      padding: 32px 28px 48px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    @media (max-width: 960px) {
+      main { grid-template-columns: 1fr; }
+    }
+    .panel h2 {
+      margin: 0 0 8px;
+      font: var(--rz-type-headline);
+      font-family: var(--rz-font);
+    }
+    .panel .hint {
+      margin: 0 0 16px;
+      color: var(--rz-fg-secondary);
+      font-size: 13px;
+    }
+    .panel.hidden { display: none; }
+
+    /* —— Web surface —— */
+    .web-surface {
+      background: var(--rz-bg-page);
+      border: 1px solid var(--rz-border-default);
+      border-radius: var(--rz-radius-24);
+      box-shadow: var(--rz-elevation-card);
+      overflow: hidden;
+      min-height: 640px;
+    }
+    .web-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      background: color-mix(in srgb, var(--rz-bg-card) 88%, transparent);
+      border-bottom: 1px solid var(--rz-border-default);
+      backdrop-filter: blur(12px);
+    }
+    .web-nav .tabs { display: flex; gap: 18px; }
+    .web-nav .tabs span {
+      font: var(--rz-type-label);
+      font-family: var(--rz-font);
+      color: var(--rz-fg-secondary);
+      padding-bottom: 6px;
+      border-bottom: 2px solid transparent;
+    }
+    .web-nav .tabs span.on {
+      color: var(--rz-fg-accent);
+      border-bottom-color: var(--rz-fg-accent);
+    }
+    .web-body { padding: 20px; display: grid; gap: 16px; }
+    .card {
+      background: var(--rz-bg-card);
+      border-radius: var(--rz-radius-20);
+      padding: var(--rz-space-16);
+      box-shadow: var(--rz-elevation-card);
+    }
+    .card h3 { margin: 0 0 4px; font: var(--rz-type-section); font-family: var(--rz-font); }
+    .card .meta { color: var(--rz-fg-secondary); font-size: 13px; margin-bottom: 12px; }
+    .score {
+      font-size: 40px;
+      font-weight: 600;
+      color: var(--rz-fg-accent);
+      line-height: 1;
+    }
+    .petals { display: flex; gap: 8px; margin-top: 12px; }
+    .petals i {
+      width: 14px; height: 14px; border-radius: 50%; display: block;
+    }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .btn {
+      height: var(--rz-button-primary-h);
+      padding: 0 20px;
+      border: 0;
+      border-radius: var(--rz-radius-16);
+      font: var(--rz-type-button);
+      font-family: var(--rz-font);
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--rz-bg-accent); color: var(--rz-fg-on-accent); height: 44px; border-radius: 14px; }
+    .btn-secondary {
+      background: var(--rz-bg-accent-tint);
+      color: var(--rz-fg-accent);
+      height: 44px;
+      border-radius: 12px;
+    }
+    .field {
+      height: var(--rz-field-h);
+      width: 100%;
+      border: 1px solid var(--rz-border-default);
+      border-radius: var(--rz-radius-12);
+      padding: 0 12px;
+      background: var(--rz-bg-card-alt);
+      color: var(--rz-fg-primary);
+      font: var(--rz-type-body);
+      font-family: var(--rz-font);
+    }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip {
+      height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      font: var(--rz-type-caption);
+      font-family: var(--rz-font);
+      border: 1px solid var(--rz-border-default);
+      background: var(--rz-bg-card);
+    }
+    .chip.on { background: var(--rz-bg-accent); color: var(--rz-fg-on-accent); border-color: transparent; }
+    .emoji-row { display: flex; gap: 10px; }
+    .emoji-row img {
+      width: 36px; height: 36px;
+      padding: 8px;
+      background: var(--rz-bg-card);
+      border-radius: 16px;
+      box-shadow: var(--rz-elevation-soft);
+    }
+    .slogan { color: var(--rz-fg-secondary); font-size: 14px; }
+
+    /* —— Apple phone frame —— */
+    .phone-wrap { display: flex; justify-content: center; padding: 8px 0 24px; }
+    .phone {
+      width: 390px;
+      height: 844px;
+      border-radius: 44px;
+      background: #111;
+      padding: 12px;
+      box-shadow: 0 24px 60px rgba(22, 20, 31, 0.28);
+      position: relative;
+    }
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 34px;
+      overflow: hidden;
+      background: var(--rz-bg-page);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .notch {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 28px;
+      background: #111;
+      border-radius: 20px;
+      z-index: 2;
+    }
+    .status {
+      height: 54px;
+      padding: 16px 20px 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--rz-fg-primary);
+    }
+    .ios-content {
+      flex: 1;
+      padding: 8px 20px 20px;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .large-title {
+      font-size: 34px;
+      font-weight: 600;
+      letter-spacing: -0.4px;
+      margin: 0;
+    }
+    .ios-nav {
+      display: flex;
+      gap: 20px;
+      align-items: flex-end;
+    }
+    .ios-nav span {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--rz-fg-secondary);
+      padding-bottom: 6px;
+      border-bottom: 2px solid transparent;
+    }
+    .ios-nav span.on {
+      color: var(--rz-fg-accent);
+      border-bottom-color: var(--rz-fg-accent);
+    }
+    .sheet {
+      margin-top: auto;
+      background: color-mix(in srgb, var(--rz-bg-card) 92%, transparent);
+      backdrop-filter: blur(20px);
+      border-radius: 28px 28px 0 0;
+      padding: 12px 18px 28px;
+      box-shadow: var(--rz-elevation-sheet);
+      border: 1px solid color-mix(in srgb, var(--rz-border-default) 70%, transparent);
+    }
+    .grabber {
+      width: 36px; height: 4px; border-radius: 999px;
+      background: var(--rz-separator);
+      margin: 0 auto 12px;
+    }
+    .home-indicator {
+      position: absolute;
+      bottom: 8px; left: 50%; transform: translateX(-50%);
+      width: 134px; height: 5px; border-radius: 999px;
+      background: color-mix(in srgb, var(--rz-text) 35%, transparent);
+    }
+    .dock {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 8px 16px 20px;
+      padding: 10px;
+      border-radius: 28px;
+      background: color-mix(in srgb, var(--rz-bg-card) 75%, transparent);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--rz-elevation-float);
+      border: 1px solid color-mix(in srgb, var(--rz-border-default) 60%, transparent);
+    }
+    .dock button {
+      border: 0;
+      background: transparent;
+      color: var(--rz-fg-secondary);
+      font-size: 11px;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: center;
+      cursor: pointer;
+    }
+    .dock button.on { color: var(--rz-fg-accent); }
+    .dock .dot {
+      width: 28px; height: 28px; border-radius: 10px;
+      background: var(--rz-bg-accent-tint);
+      display: grid; place-items: center;
+      font-size: 14px;
+    }
+    .dock button.on .dot { background: var(--rz-bg-accent); color: var(--rz-fg-on-accent); }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <img class="logo" src="../brand/ReZephyr-128.svg" alt="ReZephyr" />
+      <div>
+        <h1>ReZephyr simulated previews</h1>
+        <p>Design system made for human and AI · v1.0.0-beta.3 (Build 4)</p>
+      </div>
+    </div>
+    <div class="controls">
+      <div class="seg" role="tablist" aria-label="Preview platform">
+        <button type="button" id="tab-both" aria-pressed="true">Both</button>
+        <button type="button" id="tab-web" aria-pressed="false">Web</button>
+        <button type="button" id="tab-apple" aria-pressed="false">Apple</button>
+      </div>
+      <button type="button" class="theme-btn" id="themeToggle" aria-label="Toggle theme">Dark</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel" id="panel-web">
+      <h2>Web</h2>
+      <p class="hint">Desktop / responsive surface using <code>tokens.css</code> only.</p>
+      <div class="web-surface" data-theme-scope>
+        <div class="web-nav">
+          <strong style="color:var(--rz-fg-accent)">ReZephyr</strong>
+          <div class="tabs">
+            <span class="on">Overview</span>
+            <span>Details</span>
+            <span>History</span>
+          </div>
+          <span class="slogan">human + AI</span>
+        </div>
+        <div class="web-body">
+          <div class="card">
+            <div class="meta">Readiness</div>
+            <div class="score">86</div>
+            <div class="petals" aria-hidden="true">
+              <i style="background:var(--rz-petal-activity)"></i>
+              <i style="background:var(--rz-petal-consistency)"></i>
+              <i style="background:var(--rz-petal-load)"></i>
+              <i style="background:var(--rz-petal-cardio)"></i>
+              <i style="background:var(--rz-petal-recovery)"></i>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Actions</h3>
+            <p class="meta">Primary / secondary from control tokens</p>
+            <div class="row">
+              <button class="btn btn-primary" type="button">Continue</button>
+              <button class="btn btn-secondary" type="button">Explore</button>
+            </div>
+          </div>
+          <div class="card">
+            <input class="field" type="search" placeholder="Search tokens…" aria-label="Search tokens" />
+          </div>
+          <div class="chips">
+            <span class="chip on">Tokens</span>
+            <span class="chip">MAUI</span>
+            <span class="chip">Figma</span>
+          </div>
+          <div class="emoji-row" title="Microsoft Fluent 3D emoji (expressive only)">
+            <img src="../brand/fluent-emoji/sparkles.png" alt="" />
+            <img src="../brand/fluent-emoji/robot.png" alt="" />
+            <img src="../brand/fluent-emoji/purple-heart.png" alt="" />
+            <img src="../brand/fluent-emoji/glowing-star.png" alt="" />
+            <img src="../brand/fluent-emoji/raising-hands.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-apple">
+      <h2>Apple</h2>
+      <p class="hint">iPhone-sized canvas (390×844) with large title, acrylic dock, and sheet — same ReZephyr tokens.</p>
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="notch" aria-hidden="true"></div>
+            <div class="status"><span>9:41</span><span>5G · 100%</span></div>
+            <div class="ios-content">
+              <p class="meta" style="margin:0;color:var(--rz-fg-secondary);font-size:13px;font-weight:600">Good morning</p>
+              <h3 class="large-title">Today</h3>
+              <div class="ios-nav">
+                <span class="on">Overview</span>
+                <span>Details</span>
+                <span>History</span>
+              </div>
+              <div class="card">
+                <div class="meta">Readiness</div>
+                <div class="score">86</div>
+                <div class="petals" aria-hidden="true">
+                  <i style="background:var(--rz-petal-activity)"></i>
+                  <i style="background:var(--rz-petal-consistency)"></i>
+                  <i style="background:var(--rz-petal-load)"></i>
+                  <i style="background:var(--rz-petal-cardio)"></i>
+                  <i style="background:var(--rz-petal-recovery)"></i>
+                </div>
+              </div>
+              <div class="card">
+                <div class="row">
+                  <button class="btn btn-primary" type="button">Continue</button>
+                  <button class="btn btn-secondary" type="button">Explore</button>
+                </div>
+              </div>
+              <div class="sheet">
+                <div class="grabber"></div>
+                <strong style="display:block;margin-bottom:6px">Details</strong>
+                <p class="meta" style="margin:0 0 12px">Frosted material, hairline edge, sheet motion.</p>
+                <button class="btn btn-primary" type="button" style="width:100%">Continue</button>
+              </div>
+            </div>
+            <nav class="dock" aria-label="Floating dock">
+              <button type="button" class="on"><span class="dot">⌂</span>Home</button>
+              <button type="button"><span class="dot">◎</span>Work</button>
+              <button type="button"><span class="dot">+</span>Start</button>
+              <button type="button"><span class="dot">◇</span>You</button>
+            </nav>
+            <div class="home-indicator" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('themeToggle');
+    themeBtn.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      themeBtn.textContent = next === 'dark' ? 'Light' : 'Dark';
+    });
+
+    const panels = {
+      web: document.getElementById('panel-web'),
+      apple: document.getElementById('panel-apple'),
+    };
+    const tabs = {
+      both: document.getElementById('tab-both'),
+      web: document.getElementById('tab-web'),
+      apple: document.getElementById('tab-apple'),
+    };
+    function show(mode) {
+      Object.values(tabs).forEach(b => b.setAttribute('aria-pressed', 'false'));
+      tabs[mode].setAttribute('aria-pressed', 'true');
+      if (mode === 'both') {
+        panels.web.classList.remove('hidden');
+        panels.apple.classList.remove('hidden');
+      } else {
+        panels.web.classList.toggle('hidden', mode !== 'web');
+        panels.apple.classList.toggle('hidden', mode !== 'apple');
+      }
+    }
+    tabs.both.onclick = () => show('both');
+    tabs.web.onclick = () => show('web');
+    tabs.apple.onclick = () => show('apple');
+  </script>
+</body>
+</html>

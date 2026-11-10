@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>ReZephyr.Avalonia</RootNamespace>
+    <AssemblyName>ReZephyr.Avalonia</AssemblyName>
+    <Version>1.0.0-beta.3</Version>
+    <PackageId>ReZephyr.Avalonia</PackageId>
+    <Title>ReZephyr Design Tokens for Avalonia</Title>
+    <Description>ReZephyr design tokens for Avalonia UI by Hamed / HimoZ. Attribution required — see LICENSE.</Description>
+    <Authors>Hamed;HimoZ</Authors>
+    <Company>HimoZ</Company>
+    <Copyright>Copyright (c) Hamed / HimoZ / ReZephyr</Copyright>
+    <PackageProjectUrl>https://github.com/himoN7/rezephyr</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/himoN7/rezephyr</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>rezephyr;avalonia;design-system;tokens;himoz</PackageTags>
+    <!-- Token + AXAML stubs only; host app references Avalonia packages. -->
+    <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Themes\ReZephyrTheme.axaml" Pack="true" PackagePath="content/Themes/" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\LICENSE" Pack="true" PackagePath="\" />
+    <None Include="..\NOTICE" Pack="true" PackagePath="\" />
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+</Project>

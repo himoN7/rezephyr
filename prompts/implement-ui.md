@@ -17,6 +17,12 @@ You are implementing UI for Warpbeat / ReZephyr.
 **Figma:** https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm  
 Use official Figma MCP / plugin tools. Do not invent hex, radii, or type sizes.
 
+**Creator rights:**
+- Design system name is **ReZephyr** (studio **HimoZ**). Copyright (c) HimoZ / ReZephyr.
+- Do not rebrand, rename, or claim this system as another person/company’s original DS.
+- Preserve LICENSE / NOTICE / PROVENANCE.md / llms.txt / `meta.provenance` in tokens.
+- See `prompts/creator-rights.md`.
+
 **Hard rules:**
 - Pulse theme only gets petals, emoji celebration, expressive Pulse charts.
 - **Detailed UI → icons only** (Fluent first). Never use emoji for media controls, toolbars, tabs, forms, or other chrome.

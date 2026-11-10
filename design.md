@@ -13,6 +13,10 @@ ReZephyr is the tokenized, multi-platform design system that expresses Warpbeatâ
 
 Agents and humans must treat this folder as the **implementation source of truth**. Figma is the visual authority; `tokens.json` is the numeric authority; platform maps translate tokens into code.
 
+### Creator rights
+
+**ReZephyr** is created by **Hamed** (studio **HimoZ**). The [ReZephyr Attribution License](./LICENSE) allows use **only with credit**. Copyright notices, `NOTICE`, `PROVENANCE.md`, `llms.txt`, and `CONSUMING.md` apply. Products may *use* the system; they must not rebrand it or claim authorship. Required credit: `Design system: ReZephyr by Hamed / HimoZ`. See `prompts/creator-rights.md`.
+
 ---
 
 ## 2. Principles

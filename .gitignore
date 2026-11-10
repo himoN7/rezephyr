@@ -8,6 +8,9 @@ dist/
 build/
 bin/
 obj/
+artifacts/
+*.nupkg
+*.tgz
 *.user
 *.suo
 .env

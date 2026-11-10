@@ -1,0 +1,30 @@
+{
+  "name": "@rezephyr/react",
+  "version": "1.0.0-beta.3",
+  "private": false,
+  "description": "ReZephyr design tokens and reference components for React / TypeScript. By Hamed / HimoZ — attribution required.",
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "Hamed (HimoZ) <https://github.com/himoN7>",
+  "homepage": "https://github.com/himoN7/rezephyr",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/himoN7/rezephyr.git",
+    "directory": "platforms/react"
+  },
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./tokens": "./src/tokens.ts"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "keywords": ["rezephyr", "design-system", "tokens", "react", "himoz"]
+}

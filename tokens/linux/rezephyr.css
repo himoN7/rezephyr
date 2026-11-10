@@ -1,0 +1,46 @@
+/**
+ * ReZephyr — Linux / GTK-friendly token aliases
+ * Version: v1.0.0-beta.3 (Build 4)
+ * Import alongside or instead of tokens/tokens.css in GTK WebView / custom CSS.
+ */
+
+:root {
+  --rz-violet: #4924ac;
+  --rz-violet-tint: #ece7fa;
+  --rz-on-violet: #ffffff;
+  --rz-lime: #b9d334;
+  --rz-page: #f2f1f7;
+  --rz-card: #ffffff;
+  --rz-separator: #e4e2ec;
+  --rz-text: #16141f;
+  --rz-text-secondary: #6e6a7c;
+  --rz-heart: #ff2d55;
+  --rz-danger: #e5383b;
+  --rz-warning: #d98a00;
+  --rz-info: #2e86de;
+  --rz-success: #6e8f12;
+
+  --rz-space-8: 8px;
+  --rz-space-16: 16px;
+  --rz-space-20: 20px;
+  --rz-radius-12: 12px;
+  --rz-radius-16: 16px;
+  --rz-radius-20: 20px;
+  --rz-radius-28: 28px;
+  --rz-button-primary-h: 52px;
+  --rz-field-h: 46px;
+  --rz-touch-min: 44px;
+}
+
+/* GTK named colors (libadwaita / custom) */
+@define-color rz_accent #4924AC;
+@define-color rz_accent_dark #9C84F2;
+@define-color rz_page #F2F1F7;
+@define-color rz_page_dark #0C0B12;
+@define-color rz_card #FFFFFF;
+@define-color rz_card_dark #1A1824;
+@define-color rz_text #16141F;
+@define-color rz_text_dark #F4F3F8;
+@define-color rz_separator #E4E2EC;
+@define-color rz_heart #FF2D55;
+@define-color rz_lime #B9D334;

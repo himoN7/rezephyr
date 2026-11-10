@@ -56,6 +56,18 @@ function runContract() {
       if (!String(v).startsWith("ReZephyr")) throw new Error(`${k} → ${v} (expected ReZephyr*)`);
     }
     pass("contract", "mauiKeys all ReZephyr*");
+    const prov = tokens.meta?.provenance;
+    if (!prov || prov.designSystem !== "ReZephyr" || prov.studio !== "HimoZ" || prov.creator !== "Hamed") {
+      throw new Error("provenance");
+    }
+    if (!String(prov.requiredCredit || "").includes("Hamed")) throw new Error("requiredCredit");
+    pass("contract", "meta.provenance Hamed / HimoZ / ReZephyr");
+    for (const f of ["LICENSE", "NOTICE", "PROVENANCE.md", "llms.txt", "CONSUMING.md", "prompts/creator-rights.md"]) {
+      if (!exists(f)) throw new Error(`missing ${f}`);
+    }
+    const license = readText("LICENSE");
+    if (!/Hamed/.test(license) || !/Attribution License/i.test(license)) throw new Error("LICENSE attribution");
+    pass("contract", "creator-rights + attribution license present");
   } catch (e) {
     fail("contract", "tokens contract", e.message || e);
   }
@@ -163,12 +175,108 @@ function runAndroid() {
   }
 }
 
+function runLinux() {
+  console.log("\n== linux ==");
+  try {
+    if (!exists("mapping/linux.md")) throw new Error("mapping/linux.md missing");
+    pass("linux", "linux mapping present");
+    const css = readText("tokens/linux/rezephyr.css");
+    if (!css.includes("@define-color rz_accent") || !css.toUpperCase().includes("#4924AC")) throw new Error("gtk colors");
+    pass("linux", "GTK @define-color accent matches brand");
+    if (!css.includes("--rz-button-primary-h")) throw new Error("heights");
+    pass("linux", "linux CSS control heights present");
+  } catch (e) {
+    fail("linux", "linux tokens", e.message || e);
+  }
+}
+
+function runFlutter() {
+  console.log("\n== flutter ==");
+  try {
+    if (!exists("mapping/flutter.md")) throw new Error("mapping/flutter.md missing");
+    pass("flutter", "flutter mapping present");
+    const dart = readText("tokens/generated/rz_tokens.dart");
+    if (!dart.includes("0xFF4924AC") || !dart.includes("RZColorsLight")) throw new Error("violet");
+    pass("flutter", "rz_tokens.dart brand violet");
+    if (!dart.includes("buttonPrimary = 52") || !dart.includes("rzTheme")) throw new Error("theme");
+    pass("flutter", "ThemeData + control heights");
+  } catch (e) {
+    fail("flutter", "flutter tokens", e.message || e);
+  }
+}
+
+function runReact() {
+  console.log("\n== react ==");
+  try {
+    if (!exists("mapping/react.md")) throw new Error("mapping/react.md missing");
+    pass("react", "react mapping present");
+    const ts = readText("platforms/react/src/tokens.ts");
+    if (!ts.includes("#4924AC") || !ts.includes("RZControl")) throw new Error("tokens");
+    pass("react", "tokens.ts brand + control");
+    const btn = readText("platforms/react/src/RzButton.tsx");
+    if (!btn.includes("RZControl.buttonPrimary") || !btn.includes("c.violet")) throw new Error("button tokens");
+    pass("react", "RzButton uses RZ tokens");
+  } catch (e) {
+    fail("react", "react package", e.message || e);
+  }
+}
+
+function runAvalonia() {
+  console.log("\n== avalonia ==");
+  try {
+    if (!exists("mapping/avalonia.md")) throw new Error("mapping/avalonia.md missing");
+    pass("avalonia", "avalonia mapping present");
+    const cs = readText("platforms/avalonia/ReZephyr.Avalonia/Tokens/ReZephyrTokens.cs");
+    if (!cs.includes('Name = "ReZephyr"') || !cs.includes("ButtonPrimary = 52")) throw new Error("contract");
+    if (!cs.includes("#4924AC")) throw new Error("violet");
+    pass("avalonia", "ReZephyrTokens.cs contract");
+    const axaml = readText("platforms/avalonia/ReZephyr.Avalonia/Themes/ReZephyrTheme.axaml");
+    if (!axaml.includes("ReZephyrVioletLight") || !axaml.includes("#4924AC")) throw new Error("axaml");
+    pass("avalonia", "AXAML brushes present");
+  } catch (e) {
+    fail("avalonia", "avalonia package", e.message || e);
+  }
+}
+
+function runCmp() {
+  console.log("\n== compose-mp ==");
+  try {
+    if (!exists("mapping/compose-multiplatform.md")) throw new Error("mapping missing");
+    pass("compose-mp", "CMP mapping present");
+    const kt = readText("tokens/generated/RZTheme.cmp.kt");
+    if (!kt.includes("ReZephyrTheme") || !kt.includes("RZColorsLight.Violet")) throw new Error("theme");
+    pass("compose-mp", "RZTheme.cmp.kt ReZephyrTheme");
+  } catch (e) {
+    fail("compose-mp", "CMP stubs", e.message || e);
+  }
+}
+
+function runTauri() {
+  console.log("\n== tauri ==");
+  try {
+    if (!exists("mapping/tauri.md")) throw new Error("mapping/tauri.md missing");
+    pass("tauri", "tauri mapping present");
+    // Contract: Tauri consumes web CSS — no duplicate palette.
+    const map = readText("mapping/tauri.md");
+    if (!map.includes("tokens.css")) throw new Error("must point at tokens.css");
+    pass("tauri", "reuses web tokens.css");
+  } catch (e) {
+    fail("tauri", "tauri map", e.message || e);
+  }
+}
+
 const runners = {
   contract: runContract,
   web: runWeb,
   maui: runMaui,
   ios: runIos,
   android: runAndroid,
+  linux: runLinux,
+  flutter: runFlutter,
+  react: runReact,
+  avalonia: runAvalonia,
+  "compose-mp": runCmp,
+  tauri: runTauri,
 };
 
 console.log("ReZephyr simulated platform tests");

@@ -2,7 +2,14 @@
   "name": "rezephyr",
   "version": "1.0.0-beta.3",
   "private": true,
-  "description": "ReZephyr design system — tokens, MAUI package, maps, simulated platform tests",
+  "description": "ReZephyr design system by Hamed / HimoZ — tokens, MAUI/React/Avalonia/Flutter maps, simulated platform tests. Attribution license.",
+  "author": "Hamed (HimoZ) <https://github.com/himoN7>",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/himoN7/rezephyr",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/himoN7/rezephyr.git"
+  },
   "type": "module",
   "scripts": {
     "test": "node tests/harness/run-all.mjs",
@@ -10,6 +17,12 @@
     "test:maui": "node tests/harness/run-all.mjs --platform=maui",
     "test:ios": "node tests/harness/run-all.mjs --platform=ios",
     "test:android": "node tests/harness/run-all.mjs --platform=android",
+    "test:linux": "node tests/harness/run-all.mjs --platform=linux",
+    "test:flutter": "node tests/harness/run-all.mjs --platform=flutter",
+    "test:react": "node tests/harness/run-all.mjs --platform=react",
+    "test:avalonia": "node tests/harness/run-all.mjs --platform=avalonia",
+    "test:compose-mp": "node tests/harness/run-all.mjs --platform=compose-mp",
+    "test:tauri": "node tests/harness/run-all.mjs --platform=tauri",
     "test:contract": "node tests/harness/run-all.mjs --platform=contract"
   },
   "engines": {
