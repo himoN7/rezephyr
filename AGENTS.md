@@ -3,7 +3,7 @@
 **Version:** v1.0.0-beta.3 (Build 4)
 
 1. Read [GUIDE.md](./GUIDE.md) (full human + AI guide), then [design.md](./design.md).
-2. Pick platform map under [mapping/](./mapping/) — MAUI, web, react, flutter, avalonia, compose-multiplatform, tauri, ios, android, linux.
+2. Pick **public** platform map under [mapping/](./mapping/) — MAUI, web, react, flutter, avalonia, compose-multiplatform, tauri, ios, android, linux. Do **not** treat [`dev/`](./dev/) as public product documentation (maintainer/local notes only).
 3. Use tokens from [tokens/tokens.json](./tokens/tokens.json) (stubs in `tokens/generated/` + `platforms/`).
 4. Follow [prompts/implement-ui.md](./prompts/implement-ui.md).
 5. Finish with [prompts/qa-checklist.md](./prompts/qa-checklist.md).

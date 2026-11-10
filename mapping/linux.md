@@ -57,4 +57,4 @@ Designer icons must still follow Fluent / Adwaita geometry — no parallel custo
 
 ## Preview
 
-Open `previews/index.html` (Web panel) for token visuals. For native GTK checks, load `tokens/linux/rezephyr.css` in a small Adwaita sample on Linux/WSL with a display (WSLg).
+Open `previews/index.html` (Web panel) for token visuals. For native GTK checks, load `tokens/linux/rezephyr.css` in an Adwaita sample on a Linux desktop.

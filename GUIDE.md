@@ -68,7 +68,7 @@ Put this in README, About/Credits, or package metadata when you consume ReZephyr
 | Web / Tauri | `tokens/tokens.css` + `data-theme` |
 | Flutter | `tokens/generated/rz_tokens.dart` |
 | Kotlin / CMP | `RZTokens.kt` + `RZTheme.cmp.kt` |
-| SwiftUI | `RZTokens.swift` (Mac for native; HTML Apple preview on Windows) |
+| SwiftUI | `RZTokens.swift` + `mapping/ios.md` (native UI on Apple platforms) |
 | Avalonia | NuGet / `platforms/avalonia` |
 | Linux GTK | `tokens/linux/rezephyr.css` |
 
@@ -143,12 +143,18 @@ Retain creator attribution (Hamed Rezaei Aderyani / Himo / himoN7 / Himpire / Re
 | `platforms/maui` | `ReZephyr.Maui` |
 | `platforms/react` | `@rezephyr/react` |
 | `platforms/avalonia` | Avalonia tokens |
-| `mapping/` | Per-platform implementation maps |
+| `mapping/` | Public per-platform implementation maps |
 | `prompts/` | Agent prompts & QA |
 | `previews/` | Web + Apple-framed HTML |
 | `figma/` | Tokens Studio sync |
 | `llms.txt` | AI crawler instructions |
-| `eng/Pack-Release.ps1` | Local pack script |
+| `eng/Pack-Release.ps1` | Pack script |
+| `dev/` | **Not public** — maintainer/local environment notes only |
+
+### Public vs maintainer docs
+
+- **Public:** `GUIDE.md`, `design.md`, `CONSUMING.md`, `mapping/*` (except nothing under `dev/`), packages, tokens, prompts for implementing ReZephyr.
+- **Not public guides:** `dev/**` (e.g. Windows/WSL personal workflows). Consumers and AI onboarding **must ignore** `dev/` as product documentation.
 
 ---
 

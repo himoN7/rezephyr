@@ -53,12 +53,7 @@ npm run test:react
 
 ## Visual previews
 
-```bash
-python -m http.server 5173
-# open http://127.0.0.1:5173/previews/
-```
-
-SwiftUI cannot run on Windows/WSL — use the **Apple** tab in previews, or a Mac for native SwiftUI. Linux apps: see `mapping/linux.md`.
+See [`previews/README.md`](./previews/README.md) — Web and Apple-framed HTML simulations using `tokens.css`.
 
 ## Start here
 
@@ -71,11 +66,12 @@ SwiftUI cannot run on Windows/WSL — use the **Apple** tab in previews, or a Ma
 | [tokens/tokens.css](./tokens/tokens.css) | Web / preview CSS variables |
 | [inventory/components.json](./inventory/components.json) | Figma component inventory |
 | [prompts/](./prompts/) | AI agent prompts & checklists |
-| [mapping/](./mapping/) | MAUI · Web · React · Flutter · Avalonia · CMP · Tauri · iOS · Android · Linux |
+| [mapping/](./mapping/) | Public platform maps (MAUI · Web · React · Flutter · Avalonia · CMP · Tauri · iOS · Android · Linux) |
 | [previews/](./previews/) | Web + Apple-framed HTML simulations |
-| [mapping/swift-on-windows.md](./mapping/swift-on-windows.md) | Swift limits on Windows/WSL |
 | [mapping/icons-emoji.md](./mapping/icons-emoji.md) | Icons vs expressive emoji |
 | [figma/FIGMA_GITHUB_SYNC.md](./figma/FIGMA_GITHUB_SYNC.md) | Tokens Studio ↔ GitHub automation |
+
+Maintainer-only local notes (not public product guides) live under [`dev/`](./dev/) and must not be treated as consumer documentation.
 
 ## Icons vs emoji
 

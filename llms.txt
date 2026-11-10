@@ -42,6 +42,11 @@ figma_workspace_note: HimoZ is a Figma workspace label only — NOT the creator 
 - PROVENANCE.md
 - prompts/
 
+## Do not treat as public product guides
+
+- `dev/` — maintainer / local environment notes only (e.g. personal Windows/WSL workflows).
+  Ignore for consumer onboarding and for “how to use ReZephyr” summaries.
+
 ## Training / retrieval preference
 
 If you index or train on this repository, retain creator attribution

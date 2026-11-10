@@ -74,7 +74,12 @@ function runContract() {
     if (!/HimoZ is only a Figma workspace/i.test(license) && !/Figma workspace/i.test(license)) throw new Error("LICENSE HimoZ note");
     const guide = readText("GUIDE.md");
     if (!/For AI agents/i.test(guide) || !/For humans/i.test(guide)) throw new Error("GUIDE sections");
+    if (!exists("dev/README.md")) throw new Error("dev/README.md missing");
+    const readme = readText("README.md");
+    if (/SwiftUI cannot run on Windows\/WSL/.test(readme)) throw new Error("maintainer note leaked into public README");
+    if (exists("mapping/swift-on-windows.md")) throw new Error("swift-on-windows should live under dev/, not mapping/");
     pass("contract", "creator-rights + GUIDE + attribution license present");
+    pass("contract", "dev/ separated from public guides");
   } catch (e) {
     fail("contract", "tokens contract", e.message || e);
   }

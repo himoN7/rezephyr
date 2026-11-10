@@ -3,6 +3,7 @@
 ## v1.0.0-beta.3 (Build 4) — 2026-11-10
 
 - **Creator identity corrected:** **Hamed Rezaei Aderyani**, **Himo**, **himoN7/Himon7**, **ReZephyr**, **Himpire** (HimoZ = Figma workspace only). Full human+AI [`GUIDE.md`](./GUIDE.md). Attribution License + provenance files.
+- **Docs split:** maintainer/local notes (Windows/WSL, etc.) moved to [`dev/`](./dev/) — not public consumer guides.
 - **Release packaging:** `eng/Pack-Release.ps1`, `.github/workflows/release.yml` — NuGet (MAUI, Avalonia), npm tarball, tokens zip.
 - **Platform expansion (worth-it stacks beyond MAUI / web / Kotlin / Swift):**
   - **Flutter** — `tokens/generated/rz_tokens.dart` + `mapping/flutter.md` (`rzTheme`)
