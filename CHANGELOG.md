@@ -4,6 +4,7 @@
 
 - **Creator identity corrected:** **Hamed Rezaei Aderyani**, **Himo**, **himoN7/Himon7**, **ReZephyr**, **Himpire** (HimoZ = Figma workspace only). Full human+AI [`GUIDE.md`](./GUIDE.md). Attribution License + provenance files.
 - **Docs split:** maintainer/local notes (Windows/WSL, etc.) moved to [`dev/`](./dev/) — not public consumer guides.
+- **Registries:** release workflow publishes `ReZephyr.Maui` / `ReZephyr.Avalonia` to **GitHub NuGet Packages** (and nuget.org when `NUGET_API_KEY` is set), plus `@himoN7/rezephyr-react` to **GitHub npm**.
 - **Release packaging:** `eng/Pack-Release.ps1`, `.github/workflows/release.yml` — NuGet (MAUI, Avalonia), npm tarball, tokens zip.
 - **Platform expansion (worth-it stacks beyond MAUI / web / Kotlin / Swift):**
   - **Flutter** — `tokens/generated/rz_tokens.dart` + `mapping/flutter.md` (`rzTheme`)
