@@ -2,7 +2,7 @@ namespace ReZephyr.Maui.Tokens;
 
 /// <summary>
 /// ReZephyr Design System numeric tokens (C#).
-/// Version: v1.0.0-beta.3 (Build 4). Mirrors tokens/tokens.json — no Warpbeat dependency.
+/// Version: v1.0.0-beta.3 (Build 4). Mirrors tokens/tokens.json.
 /// </summary>
 public static class ReZephyrTokens
 {

@@ -3,7 +3,7 @@
 **Version:** v1.0.0-beta.3 (Build 4)  
 **Figma:** https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm (HimoZ)  
 **Tokens:** `tokens/tokens.json` · `tokens/tokens.css`  
-**App theme name:** Pulse (Warpbeat). **Studio / library name:** ReZephyr.
+**Studio / library name:** ReZephyr.
 
 ---
 

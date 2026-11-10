@@ -3,7 +3,7 @@
 <!--
   ReZephyr Design System — color & metric tokens
   Version: v1.0.0-beta.3 (Build 4)
-  Independent of Warpbeat. Resource keys use ReZephyr* prefix (not Pulse*).
+  Resource keys use the ReZephyr prefix.
 -->
 <ResourceDictionary
     x:Class="ReZephyr.Maui.Resources.Styles.ReZephyrColors"

@@ -1,16 +1,14 @@
 # ReZephyr.Maui
 
-**ReZephyr Design System** for .NET MAUI — fully tokenized, usable in **any** MAUI app.
+**ReZephyr Design System** for .NET MAUI — fully tokenized for any MAUI app.
 
 **Version:** v1.0.0-beta.3 (Build 4)  
 **Package:** `ReZephyr.Maui`  
-**Keys:** `ReZephyr*` (not Pulse*, not Warpbeat-specific)
-
-Pulse remains Warpbeat’s **in-app theme name**. This library is the portable **ReZephyr** design system.
+**Resource keys:** `ReZephyr*`
 
 ## Install
 
-Project reference (from this repo):
+Project reference:
 
 ```xml
 <ProjectReference Include="..\path\to\rezephyr\platforms\maui\ReZephyr.Maui\ReZephyr.Maui.csproj" />
@@ -22,7 +20,7 @@ Or pack locally:
 dotnet pack platforms/maui/ReZephyr.Maui/ReZephyr.Maui.csproj -c Release
 ```
 
-## Apply in any MAUI app
+## Apply
 
 ```csharp
 using ReZephyr.Maui.Theme;
@@ -82,8 +80,4 @@ var h = ReZephyrTokens.Control.ButtonPrimary; // 52
 | `ReZephyrTokens` | C# numeric constants |
 | `ReZephyrTheme.Apply` | One-line registration |
 
-Icons: Fluent / platform system icons for detailed UI. Animated emoji only in expressive places — see repo `mapping/icons-emoji.md`.
-
-## Not Warpbeat
-
-This package does **not** reference Warpbeat. Warpbeat may keep a Pulse-named alias layer for its own theme switch; new MAUI apps should use **ReZephyr** keys only.
+Icons: Fluent / platform system icons for detailed UI. Animated emoji only in expressive places — see `mapping/icons-emoji.md`.

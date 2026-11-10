@@ -1,6 +1,6 @@
 # ReZephyr
 
-Tokenized design system for Warpbeat **Pulse** (and reusable Apple HIG + Fluent 2 products).
+Tokenized design system — Apple HIG clarity with Fluent light, depth, and motion.
 
 **Version:** v1.0.0-beta.3 (Build 4)  
 **GitHub:** https://github.com/himoN7/rezephyr  
@@ -12,20 +12,13 @@ Tokenized design system for Warpbeat **Pulse** (and reusable Apple HIG + Fluent 
 
 Logo: [`brand/ReZephyr-128.svg`](./brand/ReZephyr-128.svg) · Cover assets: [`brand/`](./brand/)
 
-## Naming
+## MAUI
 
-- **Pulse** — Warpbeat in-app theme name (vs Classic).
-- **ReZephyr** — design-system / Figma library / docs / **MAUI package** name.
-
-## MAUI (any app)
-
-Standalone tokenized library: [`platforms/maui/`](./platforms/maui/) → **`ReZephyr.Maui`**
+Tokenized library: [`platforms/maui/`](./platforms/maui/) → **`ReZephyr.Maui`**
 
 ```csharp
-ReZephyrTheme.Apply(this); // keys are ReZephyr*, not Pulse*
+ReZephyrTheme.Apply(this);
 ```
-
-No Warpbeat reference required.
 
 ## Simulated platform tests
 
@@ -38,8 +31,8 @@ npm run test:maui
 
 | File | Role |
 |------|------|
-| [design.md](./design.md) | Design bible — principles, tokens, components, Classic vs Pulse |
-| [AUDIT.md](./AUDIT.md) | Completeness audit (DS lead) |
+| [design.md](./design.md) | Design bible — principles, tokens, components |
+| [AUDIT.md](./AUDIT.md) | Completeness audit |
 | [tokens/tokens.json](./tokens/tokens.json) | Numeric source of truth |
 | [tokens/tokens.css](./tokens/tokens.css) | Web / preview CSS variables |
 | [inventory/components.json](./inventory/components.json) | Figma component inventory |
@@ -47,13 +40,6 @@ npm run test:maui
 | [mapping/](./mapping/) | MAUI · Web · iOS · Android maps |
 | [mapping/icons-emoji.md](./mapping/icons-emoji.md) | Icons vs expressive emoji |
 | [figma/FIGMA_GITHUB_SYNC.md](./figma/FIGMA_GITHUB_SYNC.md) | Tokens Studio ↔ GitHub automation |
-
-**Figma library:** https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm
-
-## Naming
-
-- **Pulse** — in-app theme name (vs Classic).
-- **ReZephyr** — design-system / Figma library / docs name.
 
 ## Icons vs emoji
 
@@ -82,7 +68,7 @@ See [figma/FIGMA_GITHUB_SYNC.md](./figma/FIGMA_GITHUB_SYNC.md). Sync file: `figm
 }
 ```
 
-**MAUI** — use existing `Pulse*` keys in Warpbeat `PulseColors.xaml`. See `mapping/maui.md`.
+**MAUI** — see [`platforms/maui/README.md`](./platforms/maui/README.md) and [`mapping/maui.md`](./mapping/maui.md).
 
 ## Agents
 

@@ -1,24 +1,13 @@
-# ReZephyr → .NET MAUI (standalone)
+# ReZephyr → .NET MAUI
 
 **Version:** v1.0.0-beta.3 (Build 4)
 
 ## Package
 
-**`ReZephyr.Maui`** lives at `platforms/maui/ReZephyr.Maui/` in https://github.com/himoN7/rezephyr.
+**`ReZephyr.Maui`** — `platforms/maui/ReZephyr.Maui/`
 
-- Design system name: **ReZephyr** (not Pulse, not Warpbeat)
 - Resource keys: **`ReZephyr*Light` / `ReZephyr*Dark`**
-- No dependency on Warpbeat
-
-Pulse remains Warpbeat’s in-app theme name. New / independent MAUI apps should consume **ReZephyr.Maui** only.
-
-## Apply
-
-```csharp
-using ReZephyr.Maui.Theme;
-
-ReZephyrTheme.Apply(Application.Current!);
-```
+- Apply with `ReZephyrTheme.Apply(application)`
 
 See `platforms/maui/README.md`.
 
@@ -37,7 +26,7 @@ See `platforms/maui/README.md`.
 | textSecondary | `ReZephyrTextSecondary` |
 | textTertiary | `ReZephyrTextTertiary` |
 | heart / warning / danger / info / success / lime | `ReZephyr{Name}` |
-| zoneRest…Peak | `ReZephyrZoneRest` … `ReZephyrZonePeak` (theme-stable) |
+| zoneRest…Peak | `ReZephyrZoneRest` … `ReZephyrZonePeak` |
 | petal* | `ReZephyrPetalActivity` … |
 
 ## Styles
@@ -59,7 +48,3 @@ var h = ReZephyrTokens.Control.ButtonPrimary; // 52
     Style="{StaticResource ReZephyrPrimaryButtonStyle}"
     Text="Continue" />
 ```
-
-## Warpbeat note
-
-Warpbeat may continue to expose `Pulse*` resources as a **product theme alias**. That is Warpbeat-specific. The portable design system API is **ReZephyr***.

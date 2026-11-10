@@ -15,7 +15,7 @@
 
     <PackageId>ReZephyr.Maui</PackageId>
     <Title>ReZephyr Design System for .NET MAUI</Title>
-    <Description>Fully tokenized ReZephyr design system for any .NET MAUI app. Independent of Warpbeat. Resource keys use ReZephyr* prefix.</Description>
+    <Description>Fully tokenized ReZephyr design system for any .NET MAUI app. Resource keys use the ReZephyr prefix.</Description>
     <PackageTags>rezephyr;maui;design-system;tokens;fluent;hig</PackageTags>
     <Version>1.0.0-beta.3</Version>
     <Authors>HimoZ</Authors>
