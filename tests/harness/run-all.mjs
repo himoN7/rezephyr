@@ -57,17 +57,24 @@ function runContract() {
     }
     pass("contract", "mauiKeys all ReZephyr*");
     const prov = tokens.meta?.provenance;
-    if (!prov || prov.designSystem !== "ReZephyr" || prov.studio !== "HimoZ" || prov.creator !== "Hamed") {
-      throw new Error("provenance");
+    if (!prov || prov.designSystem !== "ReZephyr" || prov.organization !== "Himpire") throw new Error("provenance org");
+    if (prov.creator !== "Hamed Rezaei Aderyani" || prov.creatorShort !== "Himo") throw new Error("provenance creator");
+    if (!String(prov.requiredCredit || "").includes("Himpire") || !String(prov.requiredCredit).includes("Hamed Rezaei Aderyani")) {
+      throw new Error("requiredCredit");
     }
-    if (!String(prov.requiredCredit || "").includes("Hamed")) throw new Error("requiredCredit");
-    pass("contract", "meta.provenance Hamed / HimoZ / ReZephyr");
-    for (const f of ["LICENSE", "NOTICE", "PROVENANCE.md", "llms.txt", "CONSUMING.md", "prompts/creator-rights.md"]) {
+    if (!String(prov.figmaWorkspaceNote || "").includes("HimoZ")) throw new Error("figma workspace note");
+    pass("contract", "meta.provenance Hamed Rezaei Aderyani / Himpire / ReZephyr");
+    for (const f of ["LICENSE", "NOTICE", "PROVENANCE.md", "llms.txt", "CONSUMING.md", "GUIDE.md", "prompts/creator-rights.md"]) {
       if (!exists(f)) throw new Error(`missing ${f}`);
     }
     const license = readText("LICENSE");
-    if (!/Hamed/.test(license) || !/Attribution License/i.test(license)) throw new Error("LICENSE attribution");
-    pass("contract", "creator-rights + attribution license present");
+    if (!/Hamed Rezaei Aderyani/.test(license) || !/Himpire/.test(license) || !/Attribution License/i.test(license)) {
+      throw new Error("LICENSE attribution");
+    }
+    if (!/HimoZ is only a Figma workspace/i.test(license) && !/Figma workspace/i.test(license)) throw new Error("LICENSE HimoZ note");
+    const guide = readText("GUIDE.md");
+    if (!/For AI agents/i.test(guide) || !/For humans/i.test(guide)) throw new Error("GUIDE sections");
+    pass("contract", "creator-rights + GUIDE + attribution license present");
   } catch (e) {
     fail("contract", "tokens contract", e.message || e);
   }

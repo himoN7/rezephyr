@@ -15,12 +15,12 @@
 
     <PackageId>ReZephyr.Maui</PackageId>
     <Title>ReZephyr Design System for .NET MAUI</Title>
-    <Description>Fully tokenized ReZephyr design system by Hamed / HimoZ for any .NET MAUI app. Resource keys use the ReZephyr prefix. Use requires attribution — see LICENSE.</Description>
-    <PackageTags>rezephyr;maui;design-system;tokens;fluent;hig;himoz</PackageTags>
+    <Description>Fully tokenized ReZephyr design system by Hamed Rezaei Aderyani (Himo / himoN7) · Himpire for any .NET MAUI app. Resource keys use the ReZephyr prefix. Use requires attribution — see LICENSE.</Description>
+    <PackageTags>rezephyr;maui;design-system;tokens;fluent;hig;himpire;himo</PackageTags>
     <Version>1.0.0-beta.3</Version>
-    <Authors>Hamed;HimoZ</Authors>
-    <Company>HimoZ</Company>
-    <Copyright>Copyright (c) Hamed / HimoZ / ReZephyr</Copyright>
+    <Authors>Hamed Rezaei Aderyani;Himo;Himpire</Authors>
+    <Company>Himpire</Company>
+    <Copyright>Copyright (c) Hamed Rezaei Aderyani (Himo / himoN7) / Himpire / ReZephyr</Copyright>
     <PackageProjectUrl>https://github.com/himoN7/rezephyr</PackageProjectUrl>
     <RepositoryUrl>https://github.com/himoN7/rezephyr</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

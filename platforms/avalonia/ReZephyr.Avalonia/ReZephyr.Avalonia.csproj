@@ -8,16 +8,16 @@
     <Version>1.0.0-beta.3</Version>
     <PackageId>ReZephyr.Avalonia</PackageId>
     <Title>ReZephyr Design Tokens for Avalonia</Title>
-    <Description>ReZephyr design tokens for Avalonia UI by Hamed / HimoZ. Attribution required — see LICENSE.</Description>
-    <Authors>Hamed;HimoZ</Authors>
-    <Company>HimoZ</Company>
-    <Copyright>Copyright (c) Hamed / HimoZ / ReZephyr</Copyright>
+    <Description>ReZephyr design tokens for Avalonia UI by Hamed Rezaei Aderyani (Himo / himoN7) · Himpire. Attribution required — see LICENSE.</Description>
+    <Authors>Hamed Rezaei Aderyani;Himo;Himpire</Authors>
+    <Company>Himpire</Company>
+    <Copyright>Copyright (c) Hamed Rezaei Aderyani (Himo / himoN7) / Himpire / ReZephyr</Copyright>
     <PackageProjectUrl>https://github.com/himoN7/rezephyr</PackageProjectUrl>
     <RepositoryUrl>https://github.com/himoN7/rezephyr</RepositoryUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageTags>rezephyr;avalonia;design-system;tokens;himoz</PackageTags>
+    <PackageTags>rezephyr;avalonia;design-system;tokens;himpire;himo</PackageTags>
     <!-- Token + AXAML stubs only; host app references Avalonia packages. -->
     <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
   </PropertyGroup>

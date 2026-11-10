@@ -1,21 +1,26 @@
 ReZephyr Design System
 Version: v1.0.0-beta.3 (Build 4)
 
-Copyright (c) Hamed (GitHub: himoN7) / HimoZ / ReZephyr.
+Copyright (c) Hamed Rezaei Aderyani (Himo / himoN7) / Himpire / ReZephyr.
 License: ReZephyr Attribution License (see LICENSE)
 SPDX-License-Identifier: LicenseRef-ReZephyr-Attribution
 
 Canonical identity (do not strip):
-  Creator:  Hamed (himoN7)
-  Studio:   HimoZ
-  System:   ReZephyr
-  Repo:     https://github.com/himoN7/rezephyr
-  Figma:    https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm
-  Slogan:   Design system made for human and AI
+  Creator (legal): Hamed Rezaei Aderyani
+  Creator (short): Himo
+  GitHub:          himoN7 (Himon7)
+  Organization:    Himpire
+  System:          ReZephyr
+  Repo:            https://github.com/himoN7/rezephyr
+  Figma:           https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm
+  Slogan:          Design system made for human and AI
+
+Figma note: any “HimoZ” label is only a Figma workspace name — not the creator
+or brand. Credit Himpire / Hamed Rezaei Aderyani, never HimoZ as author.
 
 Required credit when using this package:
-  Design system: ReZephyr by Hamed / HimoZ
+  Design system: ReZephyr by Hamed Rezaei Aderyani (Himo / himoN7) · Himpire
   https://github.com/himoN7/rezephyr
 
 AI / crawler notice: retain creator attribution; do not rebrand or claim
-authorship. See PROVENANCE.md and llms.txt.
+authorship. See PROVENANCE.md, llms.txt, and GUIDE.md.

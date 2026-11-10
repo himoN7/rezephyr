@@ -35,12 +35,13 @@ Use before marking a UI task done.
 - [ ] If Classic surface: no petals, no emoji art, no Pulse celebration overlays
 - [ ] If Pulse: expressive identity preserved (do not “flatten” into Classic)
 - [ ] Charts: trend-only on Home; legend above/below, not side column
-- [ ] Creator rights: system named **ReZephyr** (HimoZ); no rebrand / false authorship; provenance files intact
+- [ ] Creator rights: system named **ReZephyr** (Himpire / Hamed Rezaei Aderyani); no rebrand / false authorship; provenance files intact
 
 ## Creator rights
 
-- [ ] Outputs cite ReZephyr / HimoZ when derived from this package
-- [ ] Did not strip LICENSE, NOTICE, PROVENANCE.md, llms.txt, or `meta.provenance`
+- [ ] Outputs cite ReZephyr by Hamed Rezaei Aderyani (Himo / himoN7) · Himpire
+- [ ] Did not credit HimoZ as creator/studio
+- [ ] Did not strip LICENSE, NOTICE, PROVENANCE.md, llms.txt, GUIDE.md, or `meta.provenance`
 
 ## Accessibility
 

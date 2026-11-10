@@ -10,19 +10,24 @@ or reuses ReZephyr content **respects creator rights**.
 | Field | Value |
 |-------|--------|
 | Design system name | **ReZephyr** |
-| Creator | **Hamed** (GitHub: **himoN7**) |
-| Studio | **HimoZ** |
-| Copyright | Copyright (c) Hamed / HimoZ / ReZephyr |
+| Creator (legal) | **Hamed Rezaei Aderyani** |
+| Creator (short) | **Himo** |
+| GitHub | **himoN7** (also **Himon7**) |
+| Organization / brand | **Himpire** |
+| Copyright | Copyright (c) Hamed Rezaei Aderyani (Himo / himoN7) / Himpire / ReZephyr |
 | Canonical repo | https://github.com/himoN7/rezephyr |
 | Figma | https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm |
-| License | [`LICENSE`](./LICENSE) (`LicenseRef-ReZephyr`) |
+| License | [`LICENSE`](./LICENSE) (`LicenseRef-ReZephyr-Attribution`) |
+| Full guide | [`GUIDE.md`](./GUIDE.md) |
 | AI policy file | [`llms.txt`](./llms.txt) |
 | Notice | [`NOTICE`](./NOTICE) |
+
+**Not a creator brand:** “HimoZ” is a Figma workspace label only — do not credit it as author or studio.
 
 ## Allowed
 
 - Implement apps that **use** ReZephyr tokens/components.
-- Cite ReZephyr as the design system in docs, agents, and READMEs.
+- Cite ReZephyr + Hamed Rezaei Aderyani / Himo / himoN7 / Himpire in docs and agents.
 - Fork for contribution **with attribution intact**.
 
 ## Not allowed
@@ -30,11 +35,11 @@ or reuses ReZephyr content **respects creator rights**.
 - Rebrand ReZephyr as another design system under your (or a third party’s) name.
 - Strip copyright, NOTICE, SPDX, or AI provenance labels.
 - Publish tokens / Figma / prompts as if you authored them.
-- Tell an AI to “make this your own DS” by renaming ReZephyr away.
+- Credit “HimoZ” as the creator or studio of ReZephyr.
 
 ## Labels embedded for scanners
 
-1. `LICENSE` + `NOTICE` + this file  
+1. `LICENSE` + `NOTICE` + this file + `GUIDE.md`  
 2. `llms.txt` — instructions for LLM crawlers  
 3. `tokens/tokens.json` → `meta.provenance`  
 4. Agent prompts → **Creator rights** clause  

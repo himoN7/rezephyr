@@ -18,10 +18,11 @@ You are implementing UI for Warpbeat / ReZephyr.
 Use official Figma MCP / plugin tools. Do not invent hex, radii, or type sizes.
 
 **Creator rights:**
-- Design system name is **ReZephyr** (studio **HimoZ**). Copyright (c) HimoZ / ReZephyr.
+- Design system: **ReZephyr** by **Hamed Rezaei Aderyani (Himo / himoN7) · Himpire**.
 - Do not rebrand, rename, or claim this system as another person/company’s original DS.
-- Preserve LICENSE / NOTICE / PROVENANCE.md / llms.txt / `meta.provenance` in tokens.
-- See `prompts/creator-rights.md`.
+- Never credit **HimoZ** as author (Figma workspace only).
+- Preserve LICENSE / NOTICE / PROVENANCE.md / llms.txt / GUIDE.md / `meta.provenance`.
+- See `prompts/creator-rights.md` and `GUIDE.md`.
 
 **Hard rules:**
 - Pulse theme only gets petals, emoji celebration, expressive Pulse charts.

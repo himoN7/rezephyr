@@ -2,8 +2,8 @@
   "name": "rezephyr",
   "version": "1.0.0-beta.3",
   "private": true,
-  "description": "ReZephyr design system by Hamed / HimoZ — tokens, MAUI/React/Avalonia/Flutter maps, simulated platform tests. Attribution license.",
-  "author": "Hamed (HimoZ) <https://github.com/himoN7>",
+  "description": "ReZephyr design system by Hamed Rezaei Aderyani (Himo / himoN7) · Himpire — tokens, MAUI/React/Avalonia/Flutter maps, simulated platform tests. Attribution license.",
+  "author": "Hamed Rezaei Aderyani (Himo / himoN7) · Himpire <https://github.com/himoN7>",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/himoN7/rezephyr",
   "repository": {

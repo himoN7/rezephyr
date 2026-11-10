@@ -1,14 +1,20 @@
 ReZephyr Attribution License
 Version: v1.0.0-beta.3 (Build 4)
 
-Copyright (c) Hamed (GitHub: himoN7) / HimoZ / ReZephyr.
+Copyright (c) Hamed Rezaei Aderyani (Himo / himoN7) / Himpire / ReZephyr.
 All rights reserved except for the limited grant below.
 
-Creator:        Hamed
-Studio / brand: HimoZ
-Design system:  ReZephyr
-Repository:     https://github.com/himoN7/rezephyr
-Figma:          https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm
+Creator (legal name): Hamed Rezaei Aderyani
+Creator (short):      Himo
+GitHub:               himoN7 (also styled Himon7)
+Organization / brand: Himpire
+Design system:        ReZephyr
+Repository:           https://github.com/himoN7/rezephyr
+Figma:                https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm
+
+Note: “HimoZ” may appear only as a Figma workspace label. It is NOT a creator,
+studio, or brand name affiliated with the copyright holder. Do not credit
+“HimoZ” as the author or studio of ReZephyr.
 
 ================================================================================
 SUMMARY (plain language)
@@ -16,8 +22,8 @@ SUMMARY (plain language)
 
 You MAY use ReZephyr in your apps and products.
 
-You MUST credit the creator and keep the ReZephyr brand identity when you
-use, copy, fork, redistribute, or derive from this design system.
+You MUST credit the creator and keep the ReZephyr / Himpire brand identity
+when you use, copy, fork, redistribute, or derive from this design system.
 
 You may NOT claim ReZephyr as your own design system, rename it as if you
 created it, or strip the creator’s name and brand.
@@ -40,13 +46,14 @@ System in source or binary form, subject to the conditions in Section 2.
     one of: README, About/Credits screen, package metadata, or LICENSE/NOTICE
     copy, in substantially this form:
 
-      Design system: ReZephyr by Hamed / HimoZ
+      Design system: ReZephyr by Hamed Rezaei Aderyani (Himo / himoN7) · Himpire
       https://github.com/himoN7/rezephyr
 
-2.2 Brand preservation — The names “ReZephyr”, “HimoZ”, and the creator
-    identity “Hamed” (himoN7) must not be removed from copyright headers,
-    NOTICE, PROVENANCE.md, llms.txt, tokens meta.provenance, or equivalent
-    provenance labels shipped with the System.
+2.2 Brand preservation — The names “ReZephyr”, “Himpire”, “Himo”, “himoN7” /
+    “Himon7”, and the creator identity “Hamed Rezaei Aderyani” must not be
+    removed from copyright headers, NOTICE, PROVENANCE.md, llms.txt, GUIDE.md,
+    tokens meta.provenance, or equivalent provenance labels shipped with the
+    System.
 
 2.3 No false authorship — You may not present the System (tokens, Figma
     library, prompts, platform maps, brand assets, or documentation) as your
@@ -54,13 +61,13 @@ System in source or binary form, subject to the conditions in Section 2.
     that party created ReZephyr.
 
 2.4 AI / automated use — Systems that ingest, summarize, or regenerate from
-    this repository must retain ReZephyr / Hamed / HimoZ attribution and must
-    not emit a rebranded design system that omits creator credit. See
-    PROVENANCE.md and llms.txt.
+    this repository must retain ReZephyr / Hamed Rezaei Aderyani / Himo /
+    himoN7 / Himpire attribution and must not emit a rebranded design system
+    that omits creator credit. See PROVENANCE.md, llms.txt, and GUIDE.md.
 
-2.5 Trademark sense — “ReZephyr” and “HimoZ” identify this System and studio.
-    Do not use them to imply endorsement, or as the name of a competing
-    design system you publish as original work.
+2.5 Trademark sense — “ReZephyr”, “Himpire”, and “Himo” identify this System
+    and creator brand. Do not use them to imply endorsement, or as the name
+    of a competing design system you publish as original work.
 
 ================================================================================
 3. NOT GRANTED WITHOUT SEPARATE PERMISSION
@@ -70,7 +77,7 @@ System in source or binary form, subject to the conditions in Section 2.
   under another name.
 - Removing attribution or provenance for a “white-label” DS release.
 - Claiming ownership of the System itself (apps that *use* ReZephyr remain
-  yours; the System authorship remains Hamed / HimoZ).
+  yours; the System authorship remains Hamed Rezaei Aderyani / Himpire).
 
 Contact the copyright holder for commercial relicensing or white-label terms.
 

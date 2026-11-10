@@ -5,10 +5,10 @@
 **Version:** v1.0.0-beta.3 (Build 4)  
 **Package:** `ReZephyr.Maui`  
 **Resource keys:** `ReZephyr*`  
-**Creator:** Hamed / HimoZ · **License:** ReZephyr Attribution License (credit required)
+**Creator:** Hamed Rezaei Aderyani (Himo / himoN7) · **Brand:** Himpire · **License:** ReZephyr Attribution License (credit required)
 
 ```text
-Design system: ReZephyr by Hamed / HimoZ
+Design system: ReZephyr by Hamed Rezaei Aderyani (Himo / himoN7) · Himpire
 https://github.com/himoN7/rezephyr
 ```
 

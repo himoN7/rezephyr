@@ -1,12 +1,13 @@
 # Consuming ReZephyr
 
 **Version:** v1.0.0-beta.3 (Build 4)  
-**License:** [ReZephyr Attribution License](./LICENSE) — use freely **with credit** to **Hamed / HimoZ / ReZephyr**.
+**License:** [ReZephyr Attribution License](./LICENSE) — use freely **with credit** to **Hamed Rezaei Aderyani / Himo / himoN7 / Himpire / ReZephyr**.  
+**Full guide:** [GUIDE.md](./GUIDE.md)
 
 Required credit line:
 
 ```text
-Design system: ReZephyr by Hamed / HimoZ
+Design system: ReZephyr by Hamed Rezaei Aderyani (Himo / himoN7) · Himpire
 https://github.com/himoN7/rezephyr
 ```
 

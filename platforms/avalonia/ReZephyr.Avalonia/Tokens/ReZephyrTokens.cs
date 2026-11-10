@@ -8,9 +8,10 @@ public static class ReZephyrTokens
     public const string Name = "ReZephyr";
     public const string Version = "1.0.0-beta.3";
     public const int Build = 4;
-    public const string Creator = "Hamed";
-    public const string Studio = "HimoZ";
-    public const string Attribution = "Design system: ReZephyr by Hamed / HimoZ — https://github.com/himoN7/rezephyr";
+    public const string Creator = "Hamed Rezaei Aderyani";
+    public const string CreatorShort = "Himo";
+    public const string Organization = "Himpire";
+    public const string Attribution = "Design system: ReZephyr by Hamed Rezaei Aderyani (Himo / himoN7) · Himpire — https://github.com/himoN7/rezephyr";
 
     public static class Space
     {

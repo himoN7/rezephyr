@@ -1,11 +1,12 @@
 /**
  * ReZephyr Design System — CSS custom properties
  * Version: v1.0.0-beta.3 (Build 4)
- * Copyright (c) HimoZ / ReZephyr — see LICENSE, NOTICE, PROVENANCE.md, llms.txt
- * SPDX-License-Identifier: LicenseRef-ReZephyr
+ * Copyright (c) Hamed Rezaei Aderyani (Himo / himoN7) / Himpire / ReZephyr
+ * See LICENSE, NOTICE, PROVENANCE.md, llms.txt, GUIDE.md
+ * SPDX-License-Identifier: LicenseRef-ReZephyr-Attribution
  * Source: tokens/tokens.json — keep in sync when changing values.
  * Usage: @import or link this file, then use var(--rz-*) in app CSS.
- * AI notice: retain ReZephyr / HimoZ attribution; do not rebrand or claim authorship.
+ * AI notice: retain ReZephyr / Hamed Rezaei Aderyani / Himo / himoN7 / Himpire attribution; never credit HimoZ as author.
  */
 
 :root,

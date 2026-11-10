@@ -7,15 +7,15 @@ Tokenized design system — Apple HIG clarity with Fluent light, depth, and moti
 **Figma:** https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm  
 
 **Slogan:** Design system made for human and AI  
-**Creator:** Hamed (himoN7) · **Studio:** HimoZ  
-**License:** [ReZephyr Attribution License](./LICENSE) — use with credit · [`NOTICE`](./NOTICE) · [`PROVENANCE.md`](./PROVENANCE.md) · [`llms.txt`](./llms.txt) · [`CONSUMING.md`](./CONSUMING.md)
+**Creator:** Hamed Rezaei Aderyani (Himo / himoN7) · **Brand:** Himpire  
+**License:** [ReZephyr Attribution License](./LICENSE) — use with credit · [`GUIDE.md`](./GUIDE.md) · [`NOTICE`](./NOTICE) · [`PROVENANCE.md`](./PROVENANCE.md) · [`llms.txt`](./llms.txt) · [`CONSUMING.md`](./CONSUMING.md)
 
 ```text
-Design system: ReZephyr by Hamed / HimoZ
+Design system: ReZephyr by Hamed Rezaei Aderyani (Himo / himoN7) · Himpire
 https://github.com/himoN7/rezephyr
 ```
 
-Products may *use* ReZephyr. Do **not** rebrand it or claim authorship.
+Full human + AI guide: [`GUIDE.md`](./GUIDE.md). Products may *use* ReZephyr. Do **not** rebrand it or claim authorship. (“HimoZ” is only a Figma workspace label.)
 
 ![ReZephyr cover](./brand/cover/rezephyr-cover.png)
 
@@ -64,6 +64,7 @@ SwiftUI cannot run on Windows/WSL — use the **Apple** tab in previews, or a Ma
 
 | File | Role |
 |------|------|
+| [GUIDE.md](./GUIDE.md) | Full human + AI guide (start here) |
 | [design.md](./design.md) | Design bible — principles, tokens, components |
 | [AUDIT.md](./AUDIT.md) | Completeness audit |
 | [tokens/tokens.json](./tokens/tokens.json) | Numeric source of truth |

@@ -52,7 +52,7 @@ jobs:
       - name: Zip tokens + license
         shell: pwsh
         run: |
-          Compress-Archive -Path tokens/tokens.json,tokens/tokens.css,tokens/tokens.schema.json,LICENSE,NOTICE,CONSUMING.md -DestinationPath artifacts/rezephyr-tokens-v1.0.0-beta.3.zip -Force
+          Compress-Archive -Path tokens/tokens.json,tokens/tokens.css,tokens/tokens.schema.json,LICENSE,NOTICE,CONSUMING.md,GUIDE.md -DestinationPath artifacts/rezephyr-tokens-v1.0.0-beta.3.zip -Force
 
       - name: Resolve tag
         id: meta
@@ -72,10 +72,13 @@ jobs:
           body: |
             ## ReZephyr ${{ steps.meta.outputs.tag }}
 
-            Tokenized design system by **Hamed / HimoZ**.
+            Tokenized design system by **Hamed Rezaei Aderyani (Himo / himoN7) · Himpire**.
 
             **License:** ReZephyr Attribution License — use freely with credit:
-            `Design system: ReZephyr by Hamed / HimoZ` · https://github.com/himoN7/rezephyr
+            `Design system: ReZephyr by Hamed Rezaei Aderyani (Himo / himoN7) · Himpire`
+            https://github.com/himoN7/rezephyr
+
+            Full guide: GUIDE.md (humans + AI). HimoZ is a Figma workspace label only.
 
             ### Consume
             See [CONSUMING.md](https://github.com/himoN7/rezephyr/blob/main/CONSUMING.md)

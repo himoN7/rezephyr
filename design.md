@@ -1,9 +1,10 @@
 # ReZephyr Design System
 
 **Version:** v1.0.0-beta.3 (Build 4)  
-**Figma:** https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm (HimoZ)  
+**Figma:** https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm  
 **Tokens:** `tokens/tokens.json` · `tokens/tokens.css`  
-**Studio / library name:** ReZephyr.
+**Library name:** ReZephyr · **Brand:** Himpire · **Creator:** Hamed Rezaei Aderyani (Himo / himoN7)  
+**Full guide:** `GUIDE.md`
 
 ---
 
@@ -15,7 +16,7 @@ Agents and humans must treat this folder as the **implementation source of truth
 
 ### Creator rights
 
-**ReZephyr** is created by **Hamed** (studio **HimoZ**). The [ReZephyr Attribution License](./LICENSE) allows use **only with credit**. Copyright notices, `NOTICE`, `PROVENANCE.md`, `llms.txt`, and `CONSUMING.md` apply. Products may *use* the system; they must not rebrand it or claim authorship. Required credit: `Design system: ReZephyr by Hamed / HimoZ`. See `prompts/creator-rights.md`.
+**ReZephyr** is created by **Hamed Rezaei Aderyani** (Himo / himoN7) under **Himpire**. The [ReZephyr Attribution License](./LICENSE) allows use **only with credit**. See `GUIDE.md`, `NOTICE`, `PROVENANCE.md`, `llms.txt`, and `CONSUMING.md`. Products may *use* the system; they must not rebrand it or claim authorship. Required credit: `Design system: ReZephyr by Hamed Rezaei Aderyani (Himo / himoN7) · Himpire`. “HimoZ” is a Figma workspace label only — not the creator brand.
 
 ---
 
@@ -43,7 +44,9 @@ Agents and humans must treat this folder as the **implementation source of truth
 |-------|------|-----|
 | Product theme | Pulse | Warpbeat UI switch (vs Classic) |
 | Design system | ReZephyr | Tokens, Figma library, docs, agent prompts |
-| Studio | HimoZ / ReZephyr | Figma ownership |
+| Creator | Hamed Rezaei Aderyani / Himo / himoN7 | Authorship & attribution |
+| Brand / org | Himpire | Organization identity |
+| Figma workspace | HimoZ | Workspace label only — **not** creator/brand |
 
 Do **not** invent alternate Re+ marketing names in UI copy. Pulse remains the user-facing theme name inside Warpbeat.
 
