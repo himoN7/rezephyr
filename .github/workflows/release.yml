@@ -55,24 +55,6 @@ jobs:
         run: |
           Compress-Archive -Path platforms/flutter/rezephyr/* -DestinationPath artifacts/rezephyr-flutter-1.0.0-beta.3.zip -Force
 
-      - name: Setup Java for Android Maven
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: "17"
-
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Publish Android Compose to GitHub Maven Packages
-        shell: pwsh
-        working-directory: platforms/android
-        run: |
-          ./gradlew.bat :rezephyr:publishReleasePublicationToGitHubPackagesRepository --no-daemon
-        env:
-          GITHUB_ACTOR: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Zip tokens + license
         shell: pwsh
         run: |
@@ -167,4 +149,29 @@ jobs:
           draft: false
           generate_release_notes: true
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  maven-android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK packages
+        run: |
+          sdkmanager "platforms;android-35" "build-tools;35.0.0"
+          yes | sdkmanager --licenses >/dev/null || true
+
+      - name: Publish Android Compose to GitHub Maven Packages
+        working-directory: platforms/android
+        run: ./gradlew :rezephyr:publishReleasePublicationToGitHubPackagesRepository --no-daemon
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
