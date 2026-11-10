@@ -35,12 +35,13 @@ jobs:
       - name: Install MAUI workload
         run: dotnet workload install maui-windows maui-android --skip-manifest-update
 
-      - name: Pack NuGet (MAUI + Avalonia)
+      - name: Pack NuGet (MAUI + Avalonia + Tokens)
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path artifacts | Out-Null
           dotnet pack platforms/maui/ReZephyr.Maui/ReZephyr.Maui.csproj -c Release -o artifacts
           dotnet pack platforms/avalonia/ReZephyr.Avalonia/ReZephyr.Avalonia.csproj -c Release -o artifacts
+          dotnet pack platforms/tokens-nuget/ReZephyr.Tokens/ReZephyr.Tokens.csproj -c Release -o artifacts
 
       - name: Pack npm (@rezephyr/react)
         shell: pwsh
@@ -49,10 +50,33 @@ jobs:
           npm pack --pack-destination ../../artifacts
           Pop-Location
 
+      - name: Pack Flutter package zip
+        shell: pwsh
+        run: |
+          Compress-Archive -Path platforms/flutter/rezephyr/* -DestinationPath artifacts/rezephyr-flutter-1.0.0-beta.3.zip -Force
+
+      - name: Setup Java for Android Maven
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Publish Android Compose to GitHub Maven Packages
+        shell: pwsh
+        working-directory: platforms/android
+        run: |
+          ./gradlew.bat :rezephyr:publishReleasePublicationToGitHubPackagesRepository --no-daemon
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Zip tokens + license
         shell: pwsh
         run: |
-          Compress-Archive -Path tokens/tokens.json,tokens/tokens.css,tokens/tokens.schema.json,LICENSE,NOTICE,CONSUMING.md,GUIDE.md -DestinationPath artifacts/rezephyr-tokens-v1.0.0-beta.3.zip -Force
+          Compress-Archive -Path tokens/tokens.json,tokens/tokens.css,tokens/tokens.schema.json,LICENSE,NOTICE,CONSUMING.md,GUIDE.md,Package.swift -DestinationPath artifacts/rezephyr-tokens-v1.0.0-beta.3.zip -Force
 
       - name: Publish NuGet to GitHub Packages
         shell: pwsh
@@ -120,17 +144,20 @@ jobs:
             Full guide: GUIDE.md (humans + AI). HimoZ is a Figma workspace label only.
 
             ### Install from registries
-            - **GitHub NuGet:** `ReZephyr.Maui` / `ReZephyr.Avalonia` → `https://nuget.pkg.github.com/himoN7/index.json`
-            - **nuget.org:** when `NUGET_API_KEY` is configured (same package IDs)
+            - **GitHub NuGet:** `ReZephyr.Maui` / `ReZephyr.Avalonia` / `ReZephyr.Tokens`
+            - **nuget.org:** when `NUGET_API_KEY` is set (same IDs)
+            - **GitHub Maven:** `com.himpire.rezephyr:rezephyr-compose`
             - **GitHub npm:** `@himoN7/rezephyr-react`
+            - **Swift SPM:** `https://github.com/himoN7/rezephyr.git` (root `Package.swift`)
+            - **Flutter:** git path `platforms/flutter/rezephyr`
 
             See [CONSUMING.md](https://github.com/himoN7/rezephyr/blob/main/CONSUMING.md)
 
             ### Assets
-            - `ReZephyr.Maui.*.nupkg` — .NET MAUI package
-            - `ReZephyr.Avalonia.*.nupkg` — Avalonia token stubs
-            - `rezephyr-react-*.tgz` — React / TypeScript package
-            - `rezephyr-tokens-*.zip` — tokens.json + tokens.css + LICENSE
+            - `ReZephyr.Maui` / `ReZephyr.Avalonia` / `ReZephyr.Tokens` `.nupkg`
+            - `rezephyr-react-*.tgz` — React / TypeScript
+            - `rezephyr-flutter-*.zip` — Flutter package
+            - `rezephyr-tokens-*.zip` — tokens + Package.swift
 
             Slogan: Design system made for human and AI
           files: |

@@ -15,3 +15,9 @@ artifacts/
 *.suo
 .env
 .env.*
+platforms/android/**/build/
+platforms/android/.gradle/
+platforms/android/local.properties
+platforms/flutter/**/.dart_tool/
+platforms/flutter/**/.packages
+platforms/flutter/**/pubspec.lock

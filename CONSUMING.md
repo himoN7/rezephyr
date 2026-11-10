@@ -13,21 +13,19 @@ https://github.com/himoN7/rezephyr
 
 ## Quick options
 
-| How | Best for |
-|-----|----------|
-| **GitHub NuGet** `ReZephyr.Maui` / `ReZephyr.Avalonia` | .NET apps (recommended) |
-| **nuget.org** (same IDs) | Public NuGet when published |
-| **GitHub npm** `@himoN7/rezephyr-react` | React / TypeScript |
-| GitHub Release `.nupkg` / `.tgz` | Offline / CI without registry |
-| Copy `tokens/tokens.css` | Any web / Tauri |
-| Copy generated stubs | Flutter, Swift, Kotlin |
+| Package | Registry |
+|---------|----------|
+| `ReZephyr.Maui` | GitHub NuGet / nuget.org |
+| `ReZephyr.Avalonia` | GitHub NuGet / nuget.org |
+| `ReZephyr.Tokens` | GitHub NuGet (JSON/CSS/Swift/Kotlin/Dart sources) |
+| `com.himpire.rezephyr:rezephyr-compose` | GitHub Maven |
+| `@himoN7/rezephyr-react` | GitHub npm |
+| **ReZephyr** (SPM) | Swift Package Manager via git tag |
+| **rezephyr** (Flutter) | Git path dependency |
 
-## NuGet (MAUI / Avalonia)
+Packages: https://github.com/himoN7?tab=packages
 
-### GitHub Packages
-
-1. Create a classic PAT (or use `gh auth token`) with `read:packages` (and `repo` if private).
-2. Add the source once:
+## NuGet (.NET)
 
 ```bash
 dotnet nuget add source "https://nuget.pkg.github.com/himoN7/index.json" \
@@ -35,36 +33,70 @@ dotnet nuget add source "https://nuget.pkg.github.com/himoN7/index.json" \
   --username himoN7 \
   --password YOUR_GITHUB_TOKEN \
   --store-password-in-clear-text
-```
 
-3. Install:
-
-```bash
 dotnet add package ReZephyr.Maui --version 1.0.0-beta.3 --source github-himoN7
 dotnet add package ReZephyr.Avalonia --version 1.0.0-beta.3 --source github-himoN7
+dotnet add package ReZephyr.Tokens --version 1.0.0-beta.3 --source github-himoN7
 ```
-
-Packages: https://github.com/himoN7?tab=packages
-
-### nuget.org
-
-When published to nuget.org:
-
-```bash
-dotnet add package ReZephyr.Maui --version 1.0.0-beta.3
-dotnet add package ReZephyr.Avalonia --version 1.0.0-beta.3
-```
-
-### Apply (MAUI)
 
 ```csharp
 using ReZephyr.Maui.Theme;
 ReZephyrTheme.Apply(this);
 ```
 
-## React / TypeScript
+## Android / Jetpack Compose (Maven)
 
-### GitHub Packages
+```kotlin
+repositories {
+  maven {
+    url = uri("https://maven.pkg.github.com/himoN7/rezephyr")
+    credentials {
+      username = "YOUR_GITHUB_USERNAME"
+      password = System.getenv("GITHUB_TOKEN")
+    }
+  }
+}
+dependencies {
+  implementation("com.himpire.rezephyr:rezephyr-compose:1.0.0-beta.3")
+}
+```
+
+```kotlin
+import com.himpire.rezephyr.RZColorsLight
+import com.himpire.rezephyr.RZControl
+```
+
+## Swift (SPM)
+
+```swift
+dependencies: [
+  .package(url: "https://github.com/himoN7/rezephyr.git", from: "1.0.0-beta.3")
+]
+// product: ReZephyr
+```
+
+```swift
+import ReZephyr
+Color.rzViolet()
+```
+
+## Flutter
+
+```yaml
+dependencies:
+  rezephyr:
+    git:
+      url: https://github.com/himoN7/rezephyr.git
+      path: platforms/flutter/rezephyr
+      ref: v1.0.0-beta.3
+```
+
+```dart
+import 'package:rezephyr/rezephyr.dart';
+MaterialApp(theme: rzTheme(brightness: Brightness.light));
+```
+
+## React / TypeScript (npm)
 
 ```bash
 # .npmrc
@@ -74,41 +106,12 @@ ReZephyrTheme.Apply(this);
 npm install @himoN7/rezephyr-react@1.0.0-beta.3
 ```
 
-### From git / local
-
-```bash
-npm install github:himoN7/rezephyr#v1.0.0-beta.3
-# or copy platforms/react into your monorepo
-```
-
-```ts
-import { RzButton, RZControl } from "@himoN7/rezephyr-react";
-```
-
-Also link [`tokens/tokens.css`](./tokens/tokens.css).
-
 ## Web / Tauri / static
 
 ```html
 <link rel="stylesheet" href="tokens/tokens.css" />
 <html data-theme="light">
 ```
-
-## Flutter
-
-Copy [`tokens/generated/rz_tokens.dart`](./tokens/generated/rz_tokens.dart):
-
-```dart
-theme: rzTheme(brightness: Brightness.light),
-```
-
-## Kotlin / Compose Multiplatform
-
-Copy `tokens/generated/RZTokens.kt` + `RZTheme.cmp.kt` into `commonMain`.
-
-## Avalonia
-
-Copy `platforms/avalonia/ReZephyr.Avalonia` tokens + AXAML theme, or project-reference the stub project.
 
 ## Attribution checklist
 

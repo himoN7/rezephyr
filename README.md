@@ -25,18 +25,18 @@ Logo: [`brand/ReZephyr-128.svg`](./brand/ReZephyr-128.svg) · Cover assets: [`br
 
 | Stack | Artifact |
 |-------|----------|
-| **MAUI** | [`platforms/maui/`](./platforms/maui/) → `ReZephyrTheme.Apply(this)` · NuGet `ReZephyr.Maui` |
+| **MAUI** | NuGet `ReZephyr.Maui` |
+| **Avalonia** | NuGet `ReZephyr.Avalonia` |
+| **Tokens (multi)** | NuGet `ReZephyr.Tokens` (JSON/CSS/Swift/Kotlin/Dart sources) |
+| **Android / Compose** | Maven `com.himpire.rezephyr:rezephyr-compose` |
+| **SwiftUI** | SPM product `ReZephyr` (root `Package.swift`) |
+| **Flutter** | pub path `platforms/flutter/rezephyr` |
+| **React / TypeScript** | npm `@himoN7/rezephyr-react` |
 | **Web / CSS** | [`tokens/tokens.css`](./tokens/tokens.css) |
-| **React / TypeScript** | [`platforms/react/`](./platforms/react/) · npm `@rezephyr/react` |
-| **Kotlin / Compose** | [`tokens/generated/RZTokens.kt`](./tokens/generated/RZTokens.kt) |
-| **Compose Multiplatform** | [`RZTheme.cmp.kt`](./tokens/generated/RZTheme.cmp.kt) + [`mapping/compose-multiplatform.md`](./mapping/compose-multiplatform.md) |
-| **SwiftUI** | [`tokens/generated/RZTokens.swift`](./tokens/generated/RZTokens.swift) |
-| **Flutter** | [`tokens/generated/rz_tokens.dart`](./tokens/generated/rz_tokens.dart) |
-| **Avalonia** | [`platforms/avalonia/`](./platforms/avalonia/) · NuGet `ReZephyr.Avalonia` |
 | **Linux GTK** | [`tokens/linux/rezephyr.css`](./tokens/linux/rezephyr.css) |
 | **Tauri** | [`mapping/tauri.md`](./mapping/tauri.md) (reuses web/React) |
 
-Install / credit details: [`CONSUMING.md`](./CONSUMING.md) · GitHub Releases ship `.nupkg`, `.tgz`, and tokens zip.
+Install: [`CONSUMING.md`](./CONSUMING.md) · Packages: https://github.com/himoN7?tab=packages
 
 ```csharp
 ReZephyrTheme.Apply(this); // MAUI

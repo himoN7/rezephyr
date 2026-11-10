@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PackageId>ReZephyr.Tokens</PackageId>
+    <Title>ReZephyr multi-platform design tokens</Title>
+    <Description>ReZephyr token sources (JSON, CSS, Swift, Kotlin, Dart) by Hamed Rezaei Aderyani / Himpire. Attribution required — see LICENSE. Companion stubs for platforms without a .NET runtime.</Description>
+    <Version>1.0.0-beta.3</Version>
+    <Authors>Hamed Rezaei Aderyani;Himo;Himpire</Authors>
+    <Company>Himpire</Company>
+    <Copyright>Copyright (c) Hamed Rezaei Aderyani (Himo / himoN7) / Himpire / ReZephyr</Copyright>
+    <PackageProjectUrl>https://github.com/himoN7/rezephyr</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/himoN7/rezephyr</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>rezephyr;design-system;tokens;swift;kotlin;flutter;css;himpire</PackageTags>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\..\LICENSE" Pack="true" PackagePath="\" />
+    <None Include="..\..\..\NOTICE" Pack="true" PackagePath="\" />
+    <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\..\tokens\tokens.json" Pack="true" PackagePath="content\tokens\" />
+    <None Include="..\..\..\tokens\tokens.css" Pack="true" PackagePath="content\tokens\" />
+    <None Include="..\..\..\tokens\generated\RZTokens.swift" Pack="true" PackagePath="content\swift\" />
+    <None Include="..\..\..\tokens\generated\RZTokens.kt" Pack="true" PackagePath="content\kotlin\" />
+    <None Include="..\..\..\tokens\generated\rz_tokens.dart" Pack="true" PackagePath="content\flutter\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,16 @@
+name: rezephyr
+description: ReZephyr design tokens and ThemeData for Flutter — by Hamed Rezaei Aderyani (Himo / himoN7) · Himpire
+version: 1.0.0-beta.3
+homepage: https://github.com/himoN7/rezephyr
+repository: https://github.com/himoN7/rezephyr
+issue_tracker: https://github.com/himoN7/rezephyr/issues
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.19.0"
+dependencies:
+  flutter:
+    sdk: flutter
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:

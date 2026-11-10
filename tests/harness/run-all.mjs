@@ -80,6 +80,18 @@ function runContract() {
     if (exists("mapping/swift-on-windows.md")) throw new Error("swift-on-windows should live under dev/, not mapping/");
     pass("contract", "creator-rights + GUIDE + attribution license present");
     pass("contract", "dev/ separated from public guides");
+    if (!exists("Package.swift")) throw new Error("Package.swift missing");
+    if (!exists("platforms/swift/Sources/ReZephyr/RZTokens.swift")) throw new Error("Swift sources missing");
+    pass("contract", "Swift SPM package present");
+    if (!exists("platforms/android/rezephyr/build.gradle.kts")) throw new Error("Android module missing");
+    if (!exists("platforms/android/rezephyr/src/main/java/com/himpire/rezephyr/RZTokens.kt")) throw new Error("Android tokens missing");
+    pass("contract", "Android Maven module present");
+    if (!exists("platforms/flutter/rezephyr/pubspec.yaml") || !exists("platforms/flutter/rezephyr/lib/rezephyr.dart")) {
+      throw new Error("Flutter package missing");
+    }
+    pass("contract", "Flutter pub package present");
+    if (!exists("platforms/tokens-nuget/ReZephyr.Tokens/ReZephyr.Tokens.csproj")) throw new Error("Tokens NuGet missing");
+    pass("contract", "ReZephyr.Tokens NuGet project present");
   } catch (e) {
     fail("contract", "tokens contract", e.message || e);
   }
