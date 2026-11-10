@@ -54,6 +54,41 @@ jobs:
         run: |
           Compress-Archive -Path tokens/tokens.json,tokens/tokens.css,tokens/tokens.schema.json,LICENSE,NOTICE,CONSUMING.md,GUIDE.md -DestinationPath artifacts/rezephyr-tokens-v1.0.0-beta.3.zip -Force
 
+      - name: Publish NuGet to GitHub Packages
+        shell: pwsh
+        run: |
+          dotnet nuget push "artifacts/ReZephyr.Maui.*.nupkg" --source "https://nuget.pkg.github.com/himoN7/index.json" --api-key "$env:GITHUB_TOKEN" --skip-duplicate
+          dotnet nuget push "artifacts/ReZephyr.Avalonia.*.nupkg" --source "https://nuget.pkg.github.com/himoN7/index.json" --api-key "$env:GITHUB_TOKEN" --skip-duplicate
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish NuGet to nuget.org
+        shell: pwsh
+        run: |
+          if ([string]::IsNullOrWhiteSpace($env:NUGET_API_KEY)) {
+            Write-Host "NUGET_API_KEY secret not set — skipping nuget.org publish"
+            exit 0
+          }
+          dotnet nuget push "artifacts/ReZephyr.Maui.*.nupkg" --source "https://api.nuget.org/v3/index.json" --api-key "$env:NUGET_API_KEY" --skip-duplicate
+          dotnet nuget push "artifacts/ReZephyr.Avalonia.*.nupkg" --source "https://api.nuget.org/v3/index.json" --api-key "$env:NUGET_API_KEY" --skip-duplicate
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+
+      - name: Publish npm to GitHub Packages
+        shell: pwsh
+        run: |
+          # GitHub Packages requires an owner-scoped name; publish a scoped copy.
+          Copy-Item -Recurse platforms/react artifacts/npm-gh -Force
+          Push-Location artifacts/npm-gh
+          npm pkg set name="@himoN7/rezephyr-react"
+          npm pkg set publishConfig.registry="https://npm.pkg.github.com"
+          echo "@himoN7:registry=https://npm.pkg.github.com" | Out-File -Encoding ascii .npmrc
+          echo "//npm.pkg.github.com/:_authToken=$env:GITHUB_TOKEN" | Add-Content -Encoding ascii .npmrc
+          npm publish --access public
+          Pop-Location
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Resolve tag
         id: meta
         shell: pwsh
@@ -80,7 +115,11 @@ jobs:
 
             Full guide: GUIDE.md (humans + AI). HimoZ is a Figma workspace label only.
 
-            ### Consume
+            ### Install from registries
+            - **GitHub NuGet:** `ReZephyr.Maui` / `ReZephyr.Avalonia` → `https://nuget.pkg.github.com/himoN7/index.json`
+            - **nuget.org:** when `NUGET_API_KEY` is configured (same package IDs)
+            - **GitHub npm:** `@himoN7/rezephyr-react`
+
             See [CONSUMING.md](https://github.com/himoN7/rezephyr/blob/main/CONSUMING.md)
 
             ### Assets
@@ -91,7 +130,9 @@ jobs:
 
             Slogan: Design system made for human and AI
           files: |
-            artifacts/*
+            artifacts/*.nupkg
+            artifacts/*.tgz
+            artifacts/*.zip
           draft: false
           generate_release_notes: true
         env:

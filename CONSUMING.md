@@ -15,20 +15,47 @@ https://github.com/himoN7/rezephyr
 
 | How | Best for |
 |-----|----------|
-| Git submodule / clone | Full tokens + maps + prompts |
-| NuGet `ReZephyr.Maui` | .NET MAUI apps |
-| npm / GitHub `platforms/react` | React / TypeScript |
+| **GitHub NuGet** `ReZephyr.Maui` / `ReZephyr.Avalonia` | .NET apps (recommended) |
+| **nuget.org** (same IDs) | Public NuGet when published |
+| **GitHub npm** `@himoN7/rezephyr-react` | React / TypeScript |
+| GitHub Release `.nupkg` / `.tgz` | Offline / CI without registry |
 | Copy `tokens/tokens.css` | Any web / Tauri |
-| Copy generated stubs | Flutter, Swift, Kotlin, Avalonia |
+| Copy generated stubs | Flutter, Swift, Kotlin |
 
-## NuGet (MAUI)
+## NuGet (MAUI / Avalonia)
 
-From a GitHub Release asset (`.nupkg`) or local pack:
+### GitHub Packages
+
+1. Create a classic PAT (or use `gh auth token`) with `read:packages` (and `repo` if private).
+2. Add the source once:
 
 ```bash
-dotnet pack platforms/maui/ReZephyr.Maui/ReZephyr.Maui.csproj -c Release -o artifacts
-dotnet add package ReZephyr.Maui --source ./artifacts
+dotnet nuget add source "https://nuget.pkg.github.com/himoN7/index.json" \
+  --name github-himoN7 \
+  --username himoN7 \
+  --password YOUR_GITHUB_TOKEN \
+  --store-password-in-clear-text
 ```
+
+3. Install:
+
+```bash
+dotnet add package ReZephyr.Maui --version 1.0.0-beta.3 --source github-himoN7
+dotnet add package ReZephyr.Avalonia --version 1.0.0-beta.3 --source github-himoN7
+```
+
+Packages: https://github.com/himoN7?tab=packages
+
+### nuget.org
+
+When published to nuget.org:
+
+```bash
+dotnet add package ReZephyr.Maui --version 1.0.0-beta.3
+dotnet add package ReZephyr.Avalonia --version 1.0.0-beta.3
+```
+
+### Apply (MAUI)
 
 ```csharp
 using ReZephyr.Maui.Theme;
@@ -37,14 +64,25 @@ ReZephyrTheme.Apply(this);
 
 ## React / TypeScript
 
+### GitHub Packages
+
 ```bash
-# from your app (path or git URL)
+# .npmrc
+@himoN7:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
+
+npm install @himoN7/rezephyr-react@1.0.0-beta.3
+```
+
+### From git / local
+
+```bash
 npm install github:himoN7/rezephyr#v1.0.0-beta.3
 # or copy platforms/react into your monorepo
 ```
 
 ```ts
-import { RzButton, RZControl } from "./path/to/platforms/react/src";
+import { RzButton, RZControl } from "@himoN7/rezephyr-react";
 ```
 
 Also link [`tokens/tokens.css`](./tokens/tokens.css).
