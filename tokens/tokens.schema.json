@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://warpbeat.local/design-system/rezephyr/tokens.schema.json",
+  "title": "ReZephyr tokens",
+  "type": "object",
+  "required": ["name", "version", "build", "color", "space", "radius", "type"],
+  "properties": {
+    "name": { "const": "ReZephyr" },
+    "version": { "type": "string" },
+    "build": { "type": "integer", "minimum": 1 },
+    "color": {
+      "type": "object",
+      "required": ["primitive", "semantic"],
+      "properties": {
+        "primitive": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["light", "dark"],
+            "properties": {
+              "light": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+              "dark": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" }
+            }
+          }
+        },
+        "semantic": { "type": "object" },
+        "mauiKeys": { "type": "object" }
+      }
+    },
+    "space": { "type": "object", "additionalProperties": { "type": "number" } },
+    "radius": { "type": "object", "additionalProperties": { "type": "number" } },
+    "type": { "type": "object" },
+    "stroke": { "type": "object" },
+    "opacity": { "type": "object" },
+    "elevation": { "type": "object" },
+    "motion": { "type": "object" },
+    "layout": { "type": "object" },
+    "controlHeights": { "type": "object" },
+    "states": { "type": "array", "items": { "type": "string" } },
+    "densities": { "type": "array", "items": { "type": "string" } }
+  }
+}

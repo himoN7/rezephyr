@@ -1,0 +1,188 @@
+/**
+ * ReZephyr Design System — CSS custom properties
+ * Version: v1.0.0-beta.3 (Build 4)
+ * Source: tokens/tokens.json — keep in sync when changing values.
+ * Usage: @import or link this file, then use var(--rz-*) in app CSS.
+ */
+
+:root,
+[data-theme="light"] {
+  /* Primitive — light */
+  --rz-violet: #4924ac;
+  --rz-violet-tint: #ece7fa;
+  --rz-on-violet: #ffffff;
+  --rz-lime: #b9d334;
+  --rz-lime-text: #4f6b0e;
+  --rz-lime-tint: #eef5cf;
+  --rz-heart: #ff2d55;
+  --rz-heart-tint: #ffe4ea;
+  --rz-warning: #d98a00;
+  --rz-warning-tint: #fff1d6;
+  --rz-danger: #e5383b;
+  --rz-danger-tint: #fde3e3;
+  --rz-info: #2e86de;
+  --rz-success: #6e8f12;
+  --rz-page: #f2f1f7;
+  --rz-card: #ffffff;
+  --rz-card-alt: #f7f6fb;
+  --rz-separator: #e4e2ec;
+  --rz-text: #16141f;
+  --rz-text-secondary: #6e6a7c;
+  --rz-text-tertiary: #a29eb0;
+
+  /* Petals / zones (theme-stable) */
+  --rz-petal-activity: #ff8a3d;
+  --rz-petal-consistency: #9dbf1f;
+  --rz-petal-load: #ffb020;
+  --rz-petal-cardio: #ff2d55;
+  --rz-petal-recovery: #6d4ae0;
+  --rz-zone-rest: #a9b4c8;
+  --rz-zone-warm: #b9d334;
+  --rz-zone-fat: #ffc53d;
+  --rz-zone-cardio: #ff8a3d;
+  --rz-zone-peak: #ff2d55;
+  --rz-sleep-deep: #6366f1;
+  --rz-sleep-rem: #06b6d4;
+  --rz-sleep-light: #3b82f6;
+  --rz-sleep-awake: #f59e0b;
+
+  /* Semantic aliases */
+  --rz-bg-page: var(--rz-page);
+  --rz-bg-card: var(--rz-card);
+  --rz-bg-card-alt: var(--rz-card-alt);
+  --rz-bg-accent: var(--rz-violet);
+  --rz-bg-accent-tint: var(--rz-violet-tint);
+  --rz-fg-primary: var(--rz-text);
+  --rz-fg-secondary: var(--rz-text-secondary);
+  --rz-fg-tertiary: var(--rz-text-tertiary);
+  --rz-fg-on-accent: var(--rz-on-violet);
+  --rz-fg-accent: var(--rz-violet);
+  --rz-border-default: var(--rz-separator);
+  --rz-border-focus: var(--rz-violet);
+
+  /* Space */
+  --rz-space-4: 4px;
+  --rz-space-8: 8px;
+  --rz-space-12: 12px;
+  --rz-space-16: 16px;
+  --rz-space-20: 20px;
+  --rz-space-24: 24px;
+  --rz-space-32: 32px;
+  --rz-space-40: 40px;
+  --rz-space-48: 48px;
+
+  /* Radius */
+  --rz-radius-8: 8px;
+  --rz-radius-12: 12px;
+  --rz-radius-16: 16px;
+  --rz-radius-20: 20px;
+  --rz-radius-24: 24px;
+  --rz-radius-28: 28px;
+  --rz-radius-pill: 999px;
+
+  /* Type */
+  --rz-font: "Segoe UI", "Segoe UI Variable", system-ui, sans-serif;
+  --rz-type-display: 600 34px/40px var(--rz-font);
+  --rz-type-title: 600 28px/34px var(--rz-font);
+  --rz-type-section: 600 20px/26px var(--rz-font);
+  --rz-type-headline: 600 17px/22px var(--rz-font);
+  --rz-type-body: 400 15px/22px var(--rz-font);
+  --rz-type-button: 600 16px/20px var(--rz-font);
+  --rz-type-label: 600 14px/18px var(--rz-font);
+  --rz-type-caption: 600 12px/16px var(--rz-font);
+  --rz-type-overline: 600 11px/14px var(--rz-font);
+
+  /* Stroke / opacity / elevation */
+  --rz-stroke-hairline: 0.5px;
+  --rz-stroke-thin: 1px;
+  --rz-stroke-thick: 2px;
+  --rz-opacity-disabled: 0.38;
+  --rz-opacity-pressed: 0.08;
+  --rz-opacity-scrim: 0.45;
+  --rz-elevation-soft: 0 1px 4px rgba(0, 0, 0, 0.08);
+  --rz-elevation-card: 0 8px 24px rgba(22, 20, 31, 0.06);
+  --rz-elevation-float: 0 10px 28px rgba(22, 20, 31, 0.12);
+  --rz-elevation-sheet: 0 -8px 32px rgba(22, 20, 31, 0.16);
+
+  /* Motion */
+  --rz-duration-instant: 100ms;
+  --rz-duration-fast: 200ms;
+  --rz-duration-normal: 300ms;
+  --rz-duration-slow: 500ms;
+  --rz-duration-emphasis: 700ms;
+  --rz-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --rz-ease-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --rz-ease-accelerate: cubic-bezier(0.4, 0, 1, 1);
+
+  /* Layout */
+  --rz-margin: 20px;
+  --rz-touch-min: 44px;
+  --rz-button-primary-h: 52px;
+  --rz-button-ghost-h: 50px;
+  --rz-field-h: 46px;
+}
+
+[data-theme="dark"] {
+  --rz-violet: #9c84f2;
+  --rz-violet-tint: #2a2345;
+  --rz-on-violet: #120e22;
+  --rz-lime: #cfe45a;
+  --rz-lime-text: #cfe45a;
+  --rz-lime-tint: #2b3212;
+  --rz-heart: #ff4d6d;
+  --rz-heart-tint: #3a1520;
+  --rz-warning: #ffb938;
+  --rz-warning-tint: #3a2a08;
+  --rz-danger: #ff6b6b;
+  --rz-danger-tint: #3a1414;
+  --rz-info: #5aa9f0;
+  --rz-success: #b9d334;
+  --rz-page: #0c0b12;
+  --rz-card: #1a1824;
+  --rz-card-alt: #221f2e;
+  --rz-separator: #2e2b3b;
+  --rz-text: #f4f3f8;
+  --rz-text-secondary: #a7a3b5;
+  --rz-text-tertiary: #6f6b7e;
+
+  --rz-elevation-soft: 0 1px 4px rgba(0, 0, 0, 0.4);
+  --rz-elevation-card: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --rz-elevation-float: 0 10px 28px rgba(0, 0, 0, 0.45);
+  --rz-elevation-sheet: 0 -8px 32px rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --rz-violet: #9c84f2;
+    --rz-violet-tint: #2a2345;
+    --rz-on-violet: #120e22;
+    --rz-lime: #cfe45a;
+    --rz-lime-text: #cfe45a;
+    --rz-lime-tint: #2b3212;
+    --rz-heart: #ff4d6d;
+    --rz-heart-tint: #3a1520;
+    --rz-warning: #ffb938;
+    --rz-warning-tint: #3a2a08;
+    --rz-danger: #ff6b6b;
+    --rz-danger-tint: #3a1414;
+    --rz-info: #5aa9f0;
+    --rz-success: #b9d334;
+    --rz-page: #0c0b12;
+    --rz-card: #1a1824;
+    --rz-card-alt: #221f2e;
+    --rz-separator: #2e2b3b;
+    --rz-text: #f4f3f8;
+    --rz-text-secondary: #a7a3b5;
+    --rz-text-tertiary: #6f6b7e;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --rz-duration-instant: 0ms;
+    --rz-duration-fast: 0ms;
+    --rz-duration-normal: 0ms;
+    --rz-duration-slow: 0ms;
+    --rz-duration-emphasis: 0ms;
+  }
+}

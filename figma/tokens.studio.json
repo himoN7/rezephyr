@@ -1,0 +1,90 @@
+{
+  "$schema": "https://schemas.tokens.studio/latest",
+  "meta": {
+    "name": "ReZephyr",
+    "version": "1.0.0-beta.3",
+    "build": 4,
+    "figmaFileKey": "QPBlsyhp2HMSmNFvyovOmm",
+    "figmaUrl": "https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm",
+    "description": "Tokens Studio–compatible export mirrored from tokens/tokens.json. Sync this file from GitHub via Tokens Studio → Settings → Sync → GitHub."
+  },
+  "global": {
+    "color": {
+      "violet": {
+        "light": { "value": "#4924AC", "type": "color" },
+        "dark": { "value": "#9C84F2", "type": "color" }
+      },
+      "violetTint": {
+        "light": { "value": "#ECE7FA", "type": "color" },
+        "dark": { "value": "#2A2345", "type": "color" }
+      },
+      "onViolet": {
+        "light": { "value": "#FFFFFF", "type": "color" },
+        "dark": { "value": "#120E22", "type": "color" }
+      },
+      "lime": {
+        "light": { "value": "#B9D334", "type": "color" },
+        "dark": { "value": "#CFE45A", "type": "color" }
+      },
+      "page": {
+        "light": { "value": "#F2F1F7", "type": "color" },
+        "dark": { "value": "#0C0B12", "type": "color" }
+      },
+      "card": {
+        "light": { "value": "#FFFFFF", "type": "color" },
+        "dark": { "value": "#1A1824", "type": "color" }
+      },
+      "separator": {
+        "light": { "value": "#E4E2EC", "type": "color" },
+        "dark": { "value": "#2E2B3B", "type": "color" }
+      },
+      "text": {
+        "light": { "value": "#16141F", "type": "color" },
+        "dark": { "value": "#F4F3F8", "type": "color" }
+      },
+      "textSecondary": {
+        "light": { "value": "#6E6A7C", "type": "color" },
+        "dark": { "value": "#A7A3B5", "type": "color" }
+      },
+      "heart": {
+        "light": { "value": "#FF2D55", "type": "color" },
+        "dark": { "value": "#FF4D6D", "type": "color" }
+      },
+      "warning": {
+        "light": { "value": "#D98A00", "type": "color" },
+        "dark": { "value": "#FFB938", "type": "color" }
+      },
+      "danger": {
+        "light": { "value": "#E5383B", "type": "color" },
+        "dark": { "value": "#FF6B6B", "type": "color" }
+      }
+    },
+    "space": {
+      "4": { "value": "4", "type": "spacing" },
+      "8": { "value": "8", "type": "spacing" },
+      "12": { "value": "12", "type": "spacing" },
+      "16": { "value": "16", "type": "spacing" },
+      "20": { "value": "20", "type": "spacing" },
+      "24": { "value": "24", "type": "spacing" },
+      "32": { "value": "32", "type": "spacing" },
+      "40": { "value": "40", "type": "spacing" },
+      "48": { "value": "48", "type": "spacing" }
+    },
+    "radius": {
+      "8": { "value": "8", "type": "borderRadius" },
+      "12": { "value": "12", "type": "borderRadius" },
+      "16": { "value": "16", "type": "borderRadius" },
+      "20": { "value": "20", "type": "borderRadius" },
+      "24": { "value": "24", "type": "borderRadius" },
+      "28": { "value": "28", "type": "borderRadius" },
+      "pill": { "value": "999", "type": "borderRadius" }
+    },
+    "control": {
+      "buttonPrimary": { "value": "52", "type": "sizing" },
+      "buttonGhost": { "value": "50", "type": "sizing" },
+      "field": { "value": "46", "type": "sizing" },
+      "touchMin": { "value": "44", "type": "sizing" },
+      "toolbar": { "value": "36", "type": "sizing" }
+    }
+  }
+}
