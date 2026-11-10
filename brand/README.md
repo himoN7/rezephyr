@@ -13,6 +13,9 @@
 
 ## Figma
 
-Cover lives on the **Cover** page of https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm
+Cover frame: **Cover** page · node `39:2` (1440×900)  
+https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm?node-id=39-2
+
+Export for GitHub: PNG @2x → `cover/rezephyr-cover.png`.
 
 Expressive Fluent emoji on the cover only (feeling). Detailed UI chrome still uses Fluent icons — see `mapping/icons-emoji.md`.
