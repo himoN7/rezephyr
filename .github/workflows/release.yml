@@ -57,8 +57,10 @@ jobs:
       - name: Publish NuGet to GitHub Packages
         shell: pwsh
         run: |
-          dotnet nuget push "artifacts/ReZephyr.Maui.*.nupkg" --source "https://nuget.pkg.github.com/himoN7/index.json" --api-key "$env:GITHUB_TOKEN" --skip-duplicate
-          dotnet nuget push "artifacts/ReZephyr.Avalonia.*.nupkg" --source "https://nuget.pkg.github.com/himoN7/index.json" --api-key "$env:GITHUB_TOKEN" --skip-duplicate
+          Get-ChildItem artifacts -Filter "*.nupkg" | ForEach-Object {
+            Write-Host "Pushing $($_.Name) to GitHub Packages..."
+            dotnet nuget push $_.FullName --source "https://nuget.pkg.github.com/himoN7/index.json" --api-key "$env:GITHUB_TOKEN" --skip-duplicate
+          }
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -69,8 +71,10 @@ jobs:
             Write-Host "NUGET_API_KEY secret not set — skipping nuget.org publish"
             exit 0
           }
-          dotnet nuget push "artifacts/ReZephyr.Maui.*.nupkg" --source "https://api.nuget.org/v3/index.json" --api-key "$env:NUGET_API_KEY" --skip-duplicate
-          dotnet nuget push "artifacts/ReZephyr.Avalonia.*.nupkg" --source "https://api.nuget.org/v3/index.json" --api-key "$env:NUGET_API_KEY" --skip-duplicate
+          Get-ChildItem artifacts -Filter "*.nupkg" | ForEach-Object {
+            Write-Host "Pushing $($_.Name) to nuget.org..."
+            dotnet nuget push $_.FullName --source "https://api.nuget.org/v3/index.json" --api-key "$env:NUGET_API_KEY" --skip-duplicate
+          }
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
 
