@@ -2,7 +2,9 @@
 
 Tokenized design system for Warpbeat **Pulse** (and reusable Apple HIG + Fluent 2 products).
 
-**Version:** v1.0.0-beta.3 (Build 4)
+**Version:** v1.0.0-beta.3 (Build 4)  
+**GitHub:** https://github.com/himoN7/rezephyr  
+**Figma:** https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm
 
 ## Start here
 
