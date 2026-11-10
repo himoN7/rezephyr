@@ -1,90 +1,65 @@
-# ReZephyr → .NET MAUI (Warpbeat Pulse)
+# ReZephyr → .NET MAUI (standalone)
 
 **Version:** v1.0.0-beta.3 (Build 4)
 
-## Sources in app
+## Package
 
-| ReZephyr | Warpbeat |
-|----------|----------|
-| `tokens.json` color.primitive | `Warpbeat/Resources/Styles/PulseColors.xaml` |
-| C# helpers | `Warpbeat/Services/Pulse/PulseTokens.cs` |
-| Shared styles | `PulseCardStyle`, `PulseCardAltStyle`, `PulseSectionTitleStyle`, `PulseCaptionStyle`, … |
+**`ReZephyr.Maui`** lives at `platforms/maui/ReZephyr.Maui/` in https://github.com/himoN7/rezephyr.
 
-Always use `AppThemeBinding` with `*Light` / `*Dark` pairs. Never hard-code hex in Pulse pages.
+- Design system name: **ReZephyr** (not Pulse, not Warpbeat)
+- Resource keys: **`ReZephyr*Light` / `ReZephyr*Dark`**
+- No dependency on Warpbeat
+
+Pulse remains Warpbeat’s in-app theme name. New / independent MAUI apps should consume **ReZephyr.Maui** only.
+
+## Apply
+
+```csharp
+using ReZephyr.Maui.Theme;
+
+ReZephyrTheme.Apply(Application.Current!);
+```
+
+See `platforms/maui/README.md`.
 
 ## Color key map
 
-| ReZephyr primitive | MAUI keys (Light / Dark) |
-|--------------------|--------------------------|
-| violet | `PulseVioletLight` / `PulseVioletDark` |
-| violetTint | `PulseVioletTintLight` / `PulseVioletTintDark` |
-| onViolet | `PulseOnVioletLight` / `PulseOnVioletDark` |
-| lime | `PulseLimeLight` / `PulseLimeDark` |
-| limeText | `PulseLimeTextLight` / `PulseLimeTextDark` |
-| limeTint | `PulseLimeTintLight` / `PulseLimeTintDark` |
-| page | `PulsePageBackgroundLight` / `PulsePageBackgroundDark` |
-| card | `PulseCardLight` / `PulseCardDark` |
-| cardAlt | `PulseCardAltLight` / `PulseCardAltDark` |
-| separator | `PulseSeparatorLight` / `PulseSeparatorDark` |
-| text | `PulseTextPrimaryLight` / `PulseTextPrimaryDark` |
-| textSecondary | `PulseTextSecondaryLight` / `PulseTextSecondaryDark` |
-| textTertiary | `PulseTextTertiaryLight` / `PulseTextTertiaryDark` |
-| heart | `PulseHeartLight` / `PulseHeartDark` |
-| heartTint | `PulseHeartTintLight` / `PulseHeartTintDark` |
-| warning | `PulseWarningLight` / `PulseWarningDark` |
-| danger | `PulseDangerLight` / `PulseDangerDark` |
-| info | `PulseInfoLight` / `PulseInfoDark` |
-| success | `PulseSuccessLight` / `PulseSuccessDark` |
-| zoneRest | `PulseZoneRest` |
-| zoneWarm | `PulseZoneWarmUp` |
-| zoneFat | `PulseZoneFatBurn` |
-| zoneCardio | `PulseZoneCardio` |
-| zonePeak | `PulseZonePeak` |
-| petal* | `PulsePetalActivity` … `PulsePetalRecovery` |
+| Token primitive | MAUI keys (append Light / Dark) |
+|-----------------|----------------------------------|
+| violet | `ReZephyrViolet` |
+| violetTint | `ReZephyrVioletTint` |
+| onViolet | `ReZephyrOnViolet` |
+| page | `ReZephyrPageBackground` |
+| card | `ReZephyrCard` |
+| cardAlt | `ReZephyrCardAlt` |
+| separator | `ReZephyrSeparator` |
+| text | `ReZephyrTextPrimary` |
+| textSecondary | `ReZephyrTextSecondary` |
+| textTertiary | `ReZephyrTextTertiary` |
+| heart / warning / danger / info / success / lime | `ReZephyr{Name}` |
+| zoneRest…Peak | `ReZephyrZoneRest` … `ReZephyrZonePeak` (theme-stable) |
+| petal* | `ReZephyrPetalActivity` … |
 
-## Layout & controls
+## Styles
 
-```xml
-<!-- Primary CTA -->
-<Button
-    AutomationId="PulsePrimaryCta"
-    HeightRequest="52"
-    MinimumHeightRequest="44"
-    CornerRadius="16"
-    FontSize="16"
-    FontAttributes="Bold"
-    Background="{AppThemeBinding Light={StaticResource PulseVioletLight}, Dark={StaticResource PulseVioletDark}}"
-    TextColor="{AppThemeBinding Light={StaticResource PulseOnVioletLight}, Dark={StaticResource PulseOnVioletDark}}" />
+`ReZephyrPageStyle` · `ReZephyrCardStyle` · `ReZephyrCardAltStyle` · `ReZephyrSectionTitleStyle` · `ReZephyrBodyStyle` · `ReZephyrCaptionStyle` · `ReZephyrPrimaryButtonStyle` · `ReZephyrSecondaryButtonStyle` · `ReZephyrGhostButtonStyle` · `ReZephyrDestructiveButtonStyle` · `ReZephyrEntryStyle`
 
-<!-- Card -->
-<Border Style="{StaticResource PulseCardStyle}">
-  ...
-</Border>
+## C#
+
+```csharp
+using ReZephyr.Maui.Tokens;
+var h = ReZephyrTokens.Control.ButtonPrimary; // 52
 ```
 
-- Page background → `PulsePageBackground*`
-- Section titles → `PulseSectionTitleStyle` (20 / Bold)
-- Margins → prefer 16–20; align with `--rz-margin` (20)
-- Touch targets → `MinimumHeightRequest="44"` / `MinimumWidthRequest="44"`
-- Icons → Fluent **Filled** for chrome; emoji only for Pulse feeling moments
+## Example
 
-## Navigation patterns
+```xml
+<Button
+    AutomationId="ReZephyrPrimaryCta"
+    Style="{StaticResource ReZephyrPrimaryButtonStyle}"
+    Text="Continue" />
+```
 
-| Figma | MAUI approach |
-|-------|---------------|
-| Nav Bar / Large Title | Custom header on Pulse pages (`Shell.NavBarIsVisible="False"` + large title label) |
-| Tab Bar / Floating Dock | Shell tabs or custom bottom bar with safe area |
-| Sheet / Bottom | `CommunityToolkit` popup / modal page with radius 28 top |
-| Acrylic | Platform blur where available; else opaque card |
+## Warpbeat note
 
-## Charts
-
-Use Pulse chart controls only. Home = trend-only + legend above/below. Do not add side legend columns.
-
-## Classic guard
-
-Files under Classic presentation must not reference `PulsePetal*`, Fluent emoji celebration overlays, or Pulse-only chart art. Shared ViewModels OK; shared decorative visuals not OK.
-
-## Accessibility
-
-Set `AutomationId` on every Button, Entry, Picker, CheckBox, Switch, and nav item. Prefer `SemanticProperties` for headings and live regions.
+Warpbeat may continue to expose `Pulse*` resources as a **product theme alias**. That is Warpbeat-specific. The portable design system API is **ReZephyr***.

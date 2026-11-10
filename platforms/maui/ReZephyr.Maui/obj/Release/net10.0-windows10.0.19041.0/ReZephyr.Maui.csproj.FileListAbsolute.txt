@@ -1,0 +1,17 @@
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\bin\Release\net10.0-windows10.0.19041.0\ReZephyr.Maui.deps.json
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\bin\Release\net10.0-windows10.0.19041.0\ReZephyr.Maui.dll
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\bin\Release\net10.0-windows10.0.19041.0\ReZephyr.Maui.pdb
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\bin\Release\net10.0-windows10.0.19041.0\Microsoft.Web.WebView2.Core.dll
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\bin\Release\net10.0-windows10.0.19041.0\Microsoft.Web.WebView2.Core.Projection.dll
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\obj\Release\net10.0-windows10.0.19041.0\ReZephyr.Maui.csproj.AssemblyReference.cache
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\obj\Release\net10.0-windows10.0.19041.0\ReZephyr.Maui.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\obj\Release\net10.0-windows10.0.19041.0\ReZephyr.Maui.AssemblyInfoInputs.cache
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\obj\Release\net10.0-windows10.0.19041.0\ReZephyr.Maui.AssemblyInfo.cs
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\obj\Release\net10.0-windows10.0.19041.0\ReZephyr.Maui.csproj.CoreCompileInputs.cache
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\obj\Release\net10.0-windows10.0.19041.0\ReZephyr.Maui.sourcelink.json
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\obj\Release\net10.0-windows10.0.19041.0\XamlC.stamp
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\obj\Release\net10.0-windows10.0.19041.0\ReZephyr.91163C96.Up2Date
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\obj\Release\net10.0-windows10.0.19041.0\ReZephyr.Maui.dll
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\obj\Release\net10.0-windows10.0.19041.0\refint\ReZephyr.Maui.dll
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\obj\Release\net10.0-windows10.0.19041.0\ReZephyr.Maui.pdb
+C:\Users\himpi\source\repos\rezephyr\platforms\maui\ReZephyr.Maui\obj\Release\net10.0-windows10.0.19041.0\ref\ReZephyr.Maui.dll

@@ -1,0 +1,18 @@
+{
+  "name": "rezephyr",
+  "version": "1.0.0-beta.3",
+  "private": true,
+  "description": "ReZephyr design system — tokens, MAUI package, maps, simulated platform tests",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/harness/run-all.mjs",
+    "test:web": "node tests/harness/run-all.mjs --platform=web",
+    "test:maui": "node tests/harness/run-all.mjs --platform=maui",
+    "test:ios": "node tests/harness/run-all.mjs --platform=ios",
+    "test:android": "node tests/harness/run-all.mjs --platform=android",
+    "test:contract": "node tests/harness/run-all.mjs --platform=contract"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

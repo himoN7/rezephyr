@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<!--
+  ReZephyr Design System — shared styles
+  Version: v1.0.0-beta.3 (Build 4)
+-->
+<ResourceDictionary
+    x:Class="ReZephyr.Maui.Resources.Styles.ReZephyrStyles"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Style x:Key="ReZephyrPageStyle" TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource ReZephyrPageBackgroundLight}, Dark={StaticResource ReZephyrPageBackgroundDark}}" />
+    </Style>
+
+    <Style x:Key="ReZephyrCardStyle" TargetType="Border">
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 20" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="Background" Value="{AppThemeBinding Light={StaticResource ReZephyrCardLight}, Dark={StaticResource ReZephyrCardDark}}" />
+    </Style>
+
+    <Style x:Key="ReZephyrCardAltStyle" TargetType="Border">
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 16" />
+        <Setter Property="Padding" Value="14" />
+        <Setter Property="Background" Value="{AppThemeBinding Light={StaticResource ReZephyrCardAltLight}, Dark={StaticResource ReZephyrCardAltDark}}" />
+    </Style>
+
+    <Style x:Key="ReZephyrSectionTitleStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource ReZephyrTextPrimaryLight}, Dark={StaticResource ReZephyrTextPrimaryDark}}" />
+        <Setter Property="SemanticProperties.HeadingLevel" Value="Level2" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style x:Key="ReZephyrHeadlineStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource ReZephyrTextPrimaryLight}, Dark={StaticResource ReZephyrTextPrimaryDark}}" />
+    </Style>
+
+    <Style x:Key="ReZephyrBodyStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource ReZephyrTextPrimaryLight}, Dark={StaticResource ReZephyrTextPrimaryDark}}" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+    </Style>
+
+    <Style x:Key="ReZephyrCaptionStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource ReZephyrTextSecondaryLight}, Dark={StaticResource ReZephyrTextSecondaryDark}}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style x:Key="ReZephyrOverlineStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource ReZephyrTextTertiaryLight}, Dark={StaticResource ReZephyrTextTertiaryDark}}" />
+    </Style>
+
+    <Style x:Key="ReZephyrPrimaryButtonStyle" TargetType="Button">
+        <Setter Property="HeightRequest" Value="52" />
+        <Setter Property="MinimumHeightRequest" Value="44" />
+        <Setter Property="CornerRadius" Value="16" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="Padding" Value="20,0" />
+        <Setter Property="BorderWidth" Value="0" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource ReZephyrVioletLight}, Dark={StaticResource ReZephyrVioletDark}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource ReZephyrOnVioletLight}, Dark={StaticResource ReZephyrOnVioletDark}}" />
+    </Style>
+
+    <Style x:Key="ReZephyrSecondaryButtonStyle" TargetType="Button">
+        <Setter Property="HeightRequest" Value="44" />
+        <Setter Property="MinimumHeightRequest" Value="44" />
+        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="Padding" Value="16,0" />
+        <Setter Property="BorderWidth" Value="0" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource ReZephyrVioletTintLight}, Dark={StaticResource ReZephyrVioletTintDark}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource ReZephyrVioletLight}, Dark={StaticResource ReZephyrVioletDark}}" />
+    </Style>
+
+    <Style x:Key="ReZephyrGhostButtonStyle" TargetType="Button">
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="MinimumHeightRequest" Value="44" />
+        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderWidth" Value="0" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource ReZephyrVioletLight}, Dark={StaticResource ReZephyrVioletDark}}" />
+    </Style>
+
+    <Style x:Key="ReZephyrDestructiveButtonStyle" TargetType="Button">
+        <Setter Property="HeightRequest" Value="52" />
+        <Setter Property="MinimumHeightRequest" Value="44" />
+        <Setter Property="CornerRadius" Value="16" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="Padding" Value="20,0" />
+        <Setter Property="BorderWidth" Value="0" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource ReZephyrDangerLight}, Dark={StaticResource ReZephyrDangerDark}}" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+
+    <Style x:Key="ReZephyrEntryStyle" TargetType="Entry">
+        <Setter Property="HeightRequest" Value="46" />
+        <Setter Property="MinimumHeightRequest" Value="44" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource ReZephyrTextPrimaryLight}, Dark={StaticResource ReZephyrTextPrimaryDark}}" />
+        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource ReZephyrTextTertiaryLight}, Dark={StaticResource ReZephyrTextTertiaryDark}}" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource ReZephyrCardLight}, Dark={StaticResource ReZephyrCardDark}}" />
+    </Style>
+</ResourceDictionary>

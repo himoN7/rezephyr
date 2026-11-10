@@ -6,6 +6,28 @@ Tokenized design system for Warpbeat **Pulse** (and reusable Apple HIG + Fluent 
 **GitHub:** https://github.com/himoN7/rezephyr  
 **Figma:** https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm
 
+## Naming
+
+- **Pulse** — Warpbeat in-app theme name (vs Classic).
+- **ReZephyr** — design-system / Figma library / docs / **MAUI package** name.
+
+## MAUI (any app)
+
+Standalone tokenized library: [`platforms/maui/`](./platforms/maui/) → **`ReZephyr.Maui`**
+
+```csharp
+ReZephyrTheme.Apply(this); // keys are ReZephyr*, not Pulse*
+```
+
+No Warpbeat reference required.
+
+## Simulated platform tests
+
+```bash
+npm test                 # contract + web + maui + ios + android
+npm run test:maui
+```
+
 ## Start here
 
 | File | Role |
