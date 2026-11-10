@@ -6,5 +6,9 @@ Thumbs.db
 .vscode/
 dist/
 build/
+bin/
+obj/
+*.user
+*.suo
 .env
 .env.*
