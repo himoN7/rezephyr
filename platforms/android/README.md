@@ -22,4 +22,5 @@ dependencies {
 ```kotlin
 import com.himpire.rezephyr.RZColorsLight
 import com.himpire.rezephyr.RZControl
+// Compose: Color(RZColorsLight.Violet) and RZControl.buttonPrimary.dp
 ```

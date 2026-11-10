@@ -84,7 +84,7 @@ function runContract() {
     if (!exists("platforms/swift/Sources/ReZephyr/RZTokens.swift")) throw new Error("Swift sources missing");
     pass("contract", "Swift SPM package present");
     if (!exists("platforms/android/rezephyr/build.gradle.kts")) throw new Error("Android module missing");
-    if (!exists("platforms/android/rezephyr/src/main/java/com/himpire/rezephyr/RZTokens.kt")) throw new Error("Android tokens missing");
+    if (!exists("platforms/android/rezephyr/src/main/kotlin/com/himpire/rezephyr/RZTokens.kt")) throw new Error("Android tokens missing");
     pass("contract", "Android Maven module present");
     if (!exists("platforms/flutter/rezephyr/pubspec.yaml") || !exists("platforms/flutter/rezephyr/lib/rezephyr.dart")) {
       throw new Error("Flutter package missing");

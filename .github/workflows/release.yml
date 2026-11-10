@@ -85,9 +85,9 @@ jobs:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
 
       - name: Publish npm to GitHub Packages
+        continue-on-error: true
         shell: pwsh
         run: |
-          # GitHub Packages requires an owner-scoped name; publish a scoped copy.
           Copy-Item -Recurse platforms/react artifacts/npm-gh -Force
           Push-Location artifacts/npm-gh
           npm pkg set name="@himoN7/rezephyr-react"
@@ -151,7 +151,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  maven-android:
+  maven-kotlin:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -161,17 +161,9 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Install Android SDK packages
-        run: |
-          sdkmanager "platforms;android-35" "build-tools;35.0.0"
-          yes | sdkmanager --licenses >/dev/null || true
-
-      - name: Publish Android Compose to GitHub Maven Packages
+      - name: Publish Kotlin tokens to GitHub Maven Packages
         working-directory: platforms/android
-        run: ./gradlew :rezephyr:publishReleasePublicationToGitHubPackagesRepository --no-daemon
+        run: ./gradlew :rezephyr:publishMavenPublicationToGitHubPackagesRepository --no-daemon
         env:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
