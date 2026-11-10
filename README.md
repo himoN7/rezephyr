@@ -4,7 +4,13 @@ Tokenized design system for Warpbeat **Pulse** (and reusable Apple HIG + Fluent 
 
 **Version:** v1.0.0-beta.3 (Build 4)  
 **GitHub:** https://github.com/himoN7/rezephyr  
-**Figma:** https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm
+**Figma:** https://www.figma.com/design/QPBlsyhp2HMSmNFvyovOmm  
+
+**Slogan:** Design system made for human and AI
+
+![ReZephyr cover](./brand/cover/rezephyr-cover.png)
+
+Logo: [`brand/ReZephyr-128.svg`](./brand/ReZephyr-128.svg) · Cover assets: [`brand/`](./brand/)
 
 ## Naming
 
