@@ -163,7 +163,9 @@ jobs:
 
       - name: Publish Kotlin tokens to GitHub Maven Packages
         working-directory: platforms/android
-        run: ./gradlew :rezephyr:publishMavenPublicationToGitHubPackagesRepository --no-daemon
+        run: |
+          chmod +x ./gradlew
+          ./gradlew :rezephyr:publishMavenPublicationToGitHubPackagesRepository --no-daemon
         env:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
